@@ -80,69 +80,12 @@
         lastScroll = currentScroll;
     });
 
-    // ─── Hero Video Carousel ────────────
-    const heroVideos = document.querySelectorAll('.hero-video');
-    const heroDots = document.querySelectorAll('.hero-dot');
-    const heroPrev = document.getElementById('hero-prev');
-    const heroNext = document.getElementById('hero-next');
-    let currentVideo = 0;
-
-    function goToVideo(index) {
-        const nextIndex = (index + heroVideos.length) % heroVideos.length;
-        if (nextIndex === currentVideo) return;
-
-        heroVideos[currentVideo].classList.remove('active');
-        heroVideos[currentVideo].pause();
-        heroDots[currentVideo].classList.remove('active');
-
-        currentVideo = nextIndex;
-
-        const next = heroVideos[currentVideo];
-        next.currentTime = 0;
-        next.play().catch(() => {});
-        next.classList.add('active');
-        heroDots[currentVideo].classList.add('active');
+    // ─── Hero Video ────────────────────
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        heroVideo.playbackRate = 0.85;
+        heroVideo.play().catch(() => {});
     }
-
-    heroVideos.forEach((video, i) => {
-        video.playbackRate = 0.85;
-        const endTime = video.dataset.end ? parseFloat(video.dataset.end) : null;
-
-        // Auto-advance when video ends
-        video.addEventListener('ended', () => {
-            if (i === currentVideo) {
-                goToVideo(currentVideo + 1);
-            }
-        });
-
-        // Custom end time support
-        if (endTime !== null) {
-            video.addEventListener('timeupdate', () => {
-                if (video.currentTime >= endTime && i === currentVideo) {
-                    video.pause();
-                    goToVideo(currentVideo + 1);
-                }
-            });
-        }
-    });
-
-    // Start first video
-    heroVideos[0].play().catch(() => {});
-
-    // Arrow navigation
-    heroPrev.addEventListener('click', () => goToVideo(currentVideo - 1));
-    heroNext.addEventListener('click', () => goToVideo(currentVideo + 1));
-
-    // Dot navigation
-    heroDots.forEach((dot, i) => {
-        dot.addEventListener('click', () => goToVideo(i));
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') goToVideo(currentVideo - 1);
-        if (e.key === 'ArrowRight') goToVideo(currentVideo + 1);
-    });
 
     // ─── Piece Modal ────────────────────
     const modal = document.getElementById('piece-modal');

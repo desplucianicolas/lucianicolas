@@ -324,60 +324,6 @@ nav a:hover {
     );
 }
 
-/* Hero nav arrows */
-.hero-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 15;
-    background: none;
-    border: none;
-    color: rgba(240, 235, 227, 0.5);
-    font-size: 4rem;
-    cursor: pointer;
-    padding: 1rem;
-    transition: color 0.3s, transform 0.3s;
-    line-height: 1;
-    font-weight: 200;
-}
-
-.hero-nav:hover {
-    color: var(--color-yellow);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.hero-nav-prev {
-    left: 1.5rem;
-}
-
-.hero-nav-next {
-    right: 1.5rem;
-}
-
-/* Hero dots */
-.hero-dots {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 15;
-    display: flex;
-    gap: 0.8rem;
-}
-
-.hero-dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(240, 235, 227, 0.3);
-    border-radius: 0;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.hero-dot.active {
-    background: var(--color-yellow);
-    width: 24px;
-}
 
 .hero-content {
     position: relative;
@@ -1170,16 +1116,6 @@ footer p {
 /* ─── RESPONSIVE ─────────────────────── */
 
 @media (max-width: 600px) {
-    .hero-nav {
-        font-size: 2.5rem;
-        padding: 0.5rem;
-    }
-
-    .hero-nav-prev { left: 0.5rem; }
-    .hero-nav-next { right: 0.5rem; }
-
-    .hero-dots { bottom: 1.5rem; }
-
     header {
         padding: 1.2rem 1.5rem;
     }
