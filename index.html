@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucía Nicolás</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HERO / INICIO -->
+    <section id="inicio" class="hero">
+        <div class="hero-video-wrap">
+            <video class="hero-video active" muted playsinline autoplay>
+                <source src="VIDEOS PARA INICIO/IMG_9343.PNG.mov" type="video/mp4">
+                <source src="VIDEOS PARA INICIO/IMG_9343.PNG.mov" type="video/quicktime">
+            </video>
+            <video class="hero-video" muted playsinline>
+                <source src="VIDEOS PARA INICIO/Faldas variadas.mov" type="video/mp4">
+                <source src="VIDEOS PARA INICIO/Faldas variadas.mov" type="video/quicktime">
+            </video>
+            <video class="hero-video" muted playsinline data-end="399">
+                <source src="VIDEOS PARA INICIO/de negro.mov" type="video/mp4">
+                <source src="VIDEOS PARA INICIO/de negro.mov" type="video/quicktime">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <button class="hero-nav hero-nav-prev" id="hero-prev" aria-label="Anterior">&#8249;</button>
+        <button class="hero-nav hero-nav-next" id="hero-next" aria-label="Siguiente">&#8250;</button>
+        <div class="hero-dots" id="hero-dots">
+            <span class="hero-dot active"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+        </div>
+
+        <header>
+            <div class="logo">
+                <span class="logo-name">LUCÍA NICOLÁS</span>
+                <span class="logo-subtitle" data-es="Creadora Escénica" data-en="Stage Creator">Creadora Escénica</span>
+                <div class="logo-social">
+                    <a href="https://www.instagram.com/nicolaslucia__/" target="_blank" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@lucianicolas__" target="_blank" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#bio" data-es="About" data-en="About">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#bio" data-es="Bio" data-en="Bio">Bio</a></li>
+                            <li><a href="#prensa" data-es="Prensa" data-en="Press">Prensa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#escena" data-es="Escena" data-en="Stage">Escena</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#creaciones" data-es="Creaciones" data-en="Creations">Creaciones</a></li>
+                            <li><a href="#colaboraciones" data-es="Colaboraciones" data-en="Collaborations">Colaboraciones</a></li>
+                            <li><a href="#tablao" data-es="Tablao" data-en="Tablao">Tablao</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#investigacion" data-es="Escritos" data-en="Writings">Escritos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#investigacion" data-es="Investigación" data-en="Research">Investigación</a></li>
+                            <li><a href="#prosa" data-es="Prosa" data-en="Prose">Prosa</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+                <div class="lang-switch">
+                    <button id="btn-es" class="active">ES</button>
+                    <span class="lang-divider">|</span>
+                    <button id="btn-en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+
+        <div class="hero-content">
+            <div class="hero-slogan">
+                <span data-es="HEREDAR," data-en="INHERIT,">HEREDAR,</span>
+                <span data-es="FRACTURAR," data-en="FRACTURE,">FRACTURAR,</span>
+                <span class="slogan-accent" data-es="REINVENTAR," data-en="REINVENT,">REINVENTAR,</span>
+                <span data-es="BAILAR." data-en="DANCE.">BAILAR.</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- BIO -->
+    <section id="bio" class="section section-bio">
+        <div class="section-inner">
+            <h2 data-es="Bio" data-en="Bio">Bio</h2>
+            <div class="bio-intro">
+                <p class="bio-question" data-es="Hay una pregunta que Lucía Nicolás lleva bailando desde que tiene memoria:" data-en="There is a question Lucía Nicolás has been dancing since she can remember:">Hay una pregunta que Lucía Nicolás lleva bailando desde que tiene memoria:</p>
+                <p class="bio-question-bold" data-es="¿dónde vive la danza española y el flamenco cuando nadie lo está mirando?" data-en="where does Spanish dance and flamenco live when nobody is watching?">¿dónde vive la danza española y el flamenco cuando nadie lo está mirando?</p>
+            </div>
+            <div class="bio-content">
+                <div class="bio-image">
+                    <img src="FOTOS/LUCIANICOLAS.BYN..JPG" alt="Lucía Nicolás">
+                </div>
+                <div class="bio-text">
+                    <p data-es="Nació en la desconocida Murcia, donde jura haber bailado desde que tiene uso de razón. A los quince años se fue a Madrid persiguiendo su sueño de ser artista —sin mapa, sin red— dentro de conservatorios, absorbiendo de grandes maestros, rodeada de rigor y disciplina. Luego necesitó más." data-en="She was born in the lesser-known Murcia, where she swears she has danced since she can remember. At fifteen, she left for Madrid chasing her dream of being an artist —no map, no safety net— inside conservatories, absorbing from great masters, surrounded by rigor and discipline. Then she needed more.">Nació en la desconocida Murcia, donde jura haber bailado desde que tiene uso de razón. A los quince años se fue a Madrid persiguiendo su sueño de ser artista —sin mapa, sin red— dentro de conservatorios, absorbiendo de grandes maestros, rodeada de rigor y disciplina. Luego necesitó más.</p>
+                    <p data-es="Diez años después se fue a Querétaro, México, trabajando cinco años en Proart —sede del reconocido Festival Ibérica Contemporánea— creando, enseñando, interpretando, pensando. Lo suficientemente lejos de España para verla con claridad." data-en="Ten years later she moved to Querétaro, Mexico, working five years at Proart —home of the renowned Festival Ibérica Contemporánea— creating, teaching, performing, thinking. Far enough from Spain to see it clearly.">Diez años después se fue a Querétaro, México, trabajando cinco años en Proart —sede del reconocido Festival Ibérica Contemporánea— creando, enseñando, interpretando, pensando. Lo suficientemente lejos de España para verla con claridad.</p>
+                    <p data-es="Tiene el Premio Extraordinario Fin de Carrera del Real Conservatorio Mariemma, el título en Creación y Coreografía de Danza Española y el Máster en Flamencología —no como credenciales, sino como herramientas de ruptura." data-en="She holds the Extraordinary End-of-Degree Award from the Royal Conservatory Mariemma, a degree in Spanish Dance Creation and Choreography, and a Master's in Flamencology —not as credentials, but as tools for rupture.">Tiene el Premio Extraordinario Fin de Carrera del Real Conservatorio Mariemma, el título en Creación y Coreografía de Danza Española y el Máster en Flamencología —no como credenciales, sino como herramientas de ruptura.</p>
+                </div>
+            </div>
+            <div class="bio-bottom">
+                <p data-es="Su trabajo vive en la intersección de la danza española, el movimiento contemporáneo, la música techno y las herramientas digitales. No fusión. No pastiche. Algo más parecido a una colisión: dos sistemas que no deberían coexistir, forzados a la misma frecuencia hasta que algo nuevo emerge." data-en="Her work lives at the intersection of Spanish dance, contemporary movement, techno music and digital tools. Not fusion. Not pastiche. Something more like a collision: two systems that shouldn't coexist, forced to the same frequency until something new emerges.">Su trabajo vive en la intersección de la danza española, el movimiento contemporáneo, la música techno y las herramientas digitales. No fusión. No pastiche. Algo más parecido a una colisión: dos sistemas que no deberían coexistir, forzados a la misma frecuencia hasta que algo nuevo emerge.</p>
+                <p data-es="Ha bailado en España, México, Ecuador, Rumanía y Turquía. Ha construido piezas cortas y espectáculos completos. Ha sido galardonada con la Beca Ballet Nacional de España y con el Premio Estancias Coreográficas Yoshua Cienfuegos, entre otros. Su obra ha sido interpretada en certámenes y festivales nacionales e internacionales. No hace ruido con ello. Sigue avanzando." data-en="She has danced in Spain, Mexico, Ecuador, Romania and Turkey. She has built short pieces and full shows. She has been awarded the Ballet Nacional de España Scholarship and the Yoshua Cienfuegos Choreographic Residencies Prize, among others. Her work has been performed at national and international competitions and festivals. She doesn't make noise about it. She keeps moving forward.">Ha bailado en España, México, Ecuador, Rumanía y Turquía. Ha construido piezas cortas y espectáculos completos. Ha sido galardonada con la Beca Ballet Nacional de España y con el Premio Estancias Coreográficas Yoshua Cienfuegos, entre otros. Su obra ha sido interpretada en certámenes y festivales nacionales e internacionales. No hace ruido con ello. Sigue avanzando.</p>
+            </div>
+            <blockquote class="bio-quote">
+                <p data-es="«Siempre he sido muy callada. Mi abuelo bromeaba diciendo '¡Lucía, cállate ya, que no paras de hablar!', y me hacía mucha gracia. Ahora entiendo que mi fuerza está en la danza: ahí siento que grito, que no me da vergüenza decir lo que pienso, que me siento fuerte y con poder. Cosa que en la vida real, sinceramente, me cuesta.»" data-en="'I've always been very quiet. My grandfather used to joke saying 'Lucía, shut up already, you never stop talking!' and I found it hilarious. Now I understand that my strength is in dance: there I feel I'm screaming, that I'm not ashamed to say what I think, that I feel strong and powerful. Something that in real life, honestly, is hard for me.'">«Siempre he sido muy callada. Mi abuelo bromeaba diciendo '¡Lucía, cállate ya, que no paras de hablar!', y me hacía mucha gracia. Ahora entiendo que mi fuerza está en la danza: ahí siento que grito, que no me da vergüenza decir lo que pienso, que me siento fuerte y con poder. Cosa que en la vida real, sinceramente, me cuesta.»</p>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- PRENSA -->
+    <section id="prensa" class="section section-prensa">
+        <div class="section-inner">
+            <h2 data-es="Prensa" data-en="Press">Prensa</h2>
+            <div class="prensa-grid">
+                <div class="prensa-item"><img src="prensa/8m.png" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/Clases 1.png" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/clases 2.png" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/fotos flamencas.png" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/iberica.png" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/Iberica 1.jpg" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/Iberica 2.jpg" alt="Prensa"></div>
+                <div class="prensa-item"><img src="prensa/Iberica 3.jpg" alt="Prensa"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENA -->
+    <section id="escena" class="section section-creaciones">
+        <div class="creaciones-hero">
+            <img src="la niña de fuego/IMG_3480.JPG" alt="Escena">
+            <div class="creaciones-hero-overlay"></div>
+            <div class="creaciones-hero-text">
+                <h2 data-es="Escena" data-en="Stage">Escena</h2>
+            </div>
+        </div>
+
+        <!-- CREACIONES -->
+        <div id="creaciones" class="section-inner escena-sub">
+            <h3 class="escena-subtitle" data-es="Creaciones" data-en="Creations">Creaciones</h3>
+            <div class="creaciones-grid">
+                <div class="creacion-card" data-piece="nina-fuego">
+                    <div class="card-img"><img src="la niña de fuego/IMG_3466.JPG" alt="La niña de [fuego]"></div>
+                    <h3>La niña de [fuego]</h3>
+                    <span class="card-tag" data-es="Solo · danza + live session" data-en="Solo · dance + live session">Solo · danza + live session</span>
+                </div>
+                <div class="creacion-card" data-piece="ternura">
+                    <div class="card-img"><img src="La ternura/2 Benja Almazan 2025.jpg" alt="La ternura del caballo negro"></div>
+                    <h3>La ternura del caballo negro</h3>
+                    <span class="card-tag" data-es="Creación grupal · 5 intérpretes" data-en="Group creation · 5 performers">Creación grupal · 5 intérpretes</span>
+                </div>
+                <div class="creacion-card" data-piece="dulces-alegrias">
+                    <div class="card-img"><img src="Dulces alegrias/dclassic 2023-10-28 111217.289.JPEG" alt="Dulces Alegrías"></div>
+                    <h3>Dulces Alegrías</h3>
+                    <span class="card-tag" data-es="Espectáculo · Ballet Junior Proart" data-en="Full show · Ballet Junior Proart">Espectáculo · Ballet Junior Proart</span>
+                </div>
+                <div class="creacion-card" data-piece="mismidad">
+                    <div class="card-img"><img src="MISMIDAD/b55d0264-6ba7-4d95-a8c1-0fc3c15cf715.jpg" alt="Mismidad"></div>
+                    <h3>Mismidad</h3>
+                    <span class="card-tag" data-es="Dúo · Danza Contemporánea + Flamenco" data-en="Duo · Contemporary Dance + Flamenco">Dúo · Danza Contemporánea + Flamenco</span>
+                </div>
+                <div class="creacion-card" data-piece="limoneando">
+                    <div class="card-img"><img src="Limoneando/LIMONEANDO.jpg" alt="Limoneando"></div>
+                    <h3>Limoneando</h3>
+                    <span class="card-tag" data-es="Espectáculo · Danza Española" data-en="Full show · Spanish Dance">Espectáculo · Danza Española</span>
+                </div>
+                <div class="creacion-card" data-piece="manana-vendré">
+                    <div class="card-img"><img src="mañana vendré a buscarte/10003651_10204994509596811_1559998939681484450_o.jpg" alt="Mañana vendré a buscarte"></div>
+                    <h3>Mañana vendré a buscarte</h3>
+                    <span class="card-tag" data-es="Dúo · Danza Española" data-en="Duo · Spanish Dance">Dúo · Danza Española</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLABORACIONES -->
+        <div id="colaboraciones" class="section-inner escena-sub">
+            <h3 class="escena-subtitle" data-es="Colaboraciones" data-en="Collaborations">Colaboraciones</h3>
+            <div class="creaciones-grid">
+                <div class="creacion-card" data-piece="las-supers">
+                    <div class="card-img"><img src="SUPERS MARIANA COLLADO/IMG_7762.jpg" alt="Las Supers"></div>
+                    <h3>Las Supers</h3>
+                    <span class="card-tag" data-es="Pieza · Cía. Internacional Proart" data-en="Piece · Cía. Internacional Proart">Pieza · Cía. Internacional Proart</span>
+                </div>
+                <div class="creacion-card" data-piece="pan-ayer">
+                    <div class="card-img"><img src="el pan de ayer/20231201_Amarantas_3_194702_MAXL8255-Mejorado-NR.jpg" alt="El pan de ayer"></div>
+                    <h3>El pan de ayer</h3>
+                    <span class="card-tag" data-es="Espectáculo · Cía. Internacional Proart" data-en="Full show · Cía. Internacional Proart">Espectáculo · Cía. Internacional Proart</span>
+                </div>
+                <div class="creacion-card" data-piece="ta-ria">
+                    <div class="card-img"><img src="TA RIÁ/WhatsApp Image 2026-04-06 at 10.04.03.jpeg" alt="Ta Riá"></div>
+                    <h3>Ta Riá</h3>
+                    <span class="card-tag" data-es="Videoclip · Coreógrafa y bailarina" data-en="Music video · Choreographer & dancer">Videoclip · Coreógrafa y bailarina</span>
+                </div>
+                <div class="creacion-card" data-piece="flores-apagadas">
+                    <div class="card-img"><img src="COLABORACION YOMY/7ebd4492-1c64-4ac8-91f4-d505fef2a1eb.jpg" alt="Flores Apagadas"></div>
+                    <h3>Flores Apagadas</h3>
+                    <span class="card-tag" data-es="Videoclip · Dir. escénica y estética" data-en="Music video · Stage & aesthetic direction">Videoclip · Dir. escénica y estética</span>
+                </div>
+                <div class="creacion-card" data-piece="prestame-recuerdo">
+                    <div class="card-img"><img src="prestame un recuerdo/IMG_9461.JPG" alt="Préstame un recuerdo"></div>
+                    <h3>Préstame un recuerdo</h3>
+                    <span class="card-tag" data-es="Espectáculo · Cía. Internacional Proart" data-en="Full show · Cía. Internacional Proart">Espectáculo · Cía. Internacional Proart</span>
+                </div>
+                <div class="creacion-card" data-piece="encale">
+                    <div class="card-img"><img src="festival encalé/20 (2).png" alt="Laboratorio de Investigación Encalé"></div>
+                    <h3>Laboratorio de Investigación Encalé</h3>
+                    <span class="card-tag" data-es="Festival · Guadalajara, México" data-en="Festival · Guadalajara, Mexico">Festival · Guadalajara, México</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="tablao" class="section-inner escena-sub">
+            <h3 class="escena-subtitle" data-es="Tablao" data-en="Tablao">Tablao</h3>
+
+            <h4 class="tablao-sub" data-es="Ecos Flamencos | Abril | 2024" data-en="Ecos Flamencos | April | 2024">Ecos Flamencos | Abril | 2024</h4>
+            <div class="prensa-grid">
+                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49.jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49 (1).jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49 (2).jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.50.jpeg" alt="Tablao 1"></div>
+            </div>
+            <div class="tablao-links">
+                <a href="https://www.instagram.com/reels/C5yr-SIgpOs/" target="_blank" class="piece-link piece-link-teaser" data-es="Ver en Instagram" data-en="Watch on Instagram">Ver en Instagram</a>
+            </div>
+
+            <h4 class="tablao-sub" data-es="Ecos Flamencos | Noviembre | 2024" data-en="Ecos Flamencos | November | 2024">Ecos Flamencos | Noviembre | 2024</h4>
+            <div class="prensa-grid">
+                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-049.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-053.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-054.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-059.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-064.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-105.jpg" alt="Tablao 2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRENSA LIGHTBOX -->
+    <div class="prensa-lightbox" id="prensa-lightbox">
+        <button class="prensa-lightbox-close" id="prensa-lightbox-close">&times;</button>
+        <img id="prensa-lightbox-img" src="" alt="Prensa">
+    </div>
+
+    <!-- PIECE DETAIL MODAL -->
+    <div class="piece-modal" id="piece-modal">
+        <button class="piece-modal-close" id="modal-close">&times;</button>
+        <div class="piece-modal-content" id="modal-content"></div>
+    </div>
+
+    <!-- PIECE DATA (hidden) -->
+    <template id="tmpl-nina-fuego">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="la niña de fuego/IMG_3466.JPG" alt="La niña de [fuego]">
+                <img src="la niña de fuego/IMG_3473.JPG" alt="La niña de [fuego]">
+                <img src="la niña de fuego/IMG_3482.JPG" alt="La niña de [fuego]">
+            </div>
+            <div class="piece-info">
+                <h2>La niña de [fuego] 2.0</h2>
+                <p class="piece-subtitle" data-es="Solo · danza + live session con productor musical" data-en="Solo · dance + live session with music producer">Solo · danza + live session con productor musical</p>
+                <p class="piece-desc" data-es="Una mujer baila el personaje que la consume. Maruja Mallo, Lola Flores, Marisol —las que tuvieron que incendiarse para ser vistas. Cuando la máscara cae, solo queda el esqueleto. ¿Quién es un artista cuando se quita su personaje?" data-en="A woman dances the character that consumes her. Maruja Mallo, Lola Flores, Marisol —those who had to set themselves on fire to be seen. When the mask falls, only the skeleton remains. Who is an artist when they remove their character?">Una mujer baila el personaje que la consume. Maruja Mallo, Lola Flores, Marisol —las que tuvieron que incendiarse para ser vistas. Cuando la máscara cae, solo queda el esqueleto. ¿Quién es un artista cuando se quita su personaje?</p>
+                <p class="piece-desc" data-es="Con espacio sonoro en directo de Diego Gálvez, la pieza integra castañuelas y zapateados transformados en señales sonoras vía controlador MIDI y Ableton Live. Tradición y tecnología sin jerarquías." data-en="With live sound design by Diego Gálvez, the piece integrates castanets and footwork transformed into sound signals via MIDI controller and Ableton Live. Tradition and technology without hierarchies.">Con espacio sonoro en directo de Diego Gálvez, la pieza integra castañuelas y zapateados transformados en señales sonoras vía controlador MIDI y Ableton Live. Tradición y tecnología sin jerarquías.</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-ternura">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="La ternura/2 Benja Almazan 2025.jpg" alt="La ternura del caballo negro">
+                <img src="La ternura/4 Benja Almazan 2025.jpg" alt="La ternura del caballo negro">
+                <img src="La ternura/5 Benja Almazan 2025.jpg" alt="La ternura del caballo negro">
+                <img src="La ternura/© FÉLIX VÁZQUEZ DIA 17 626.jpg" alt="La ternura del caballo negro">
+                <img src="La ternura/PROART 2025-4C.JPG" alt="La ternura del caballo negro">
+                <img src="La ternura/PROART 2025-5C.JPG" alt="La ternura del caballo negro">
+            </div>
+            <div class="piece-info">
+                <h2>La ternura del caballo negro</h2>
+                <p class="piece-subtitle" data-es="Creación grupal · 5 intérpretes" data-en="Group creation · 5 performers">Creación grupal · 5 intérpretes</p>
+                <p class="piece-desc" data-es="Cinco mujeres de distintas disciplinas dancísticas buscan la misma frecuencia. La trenza como tejido colectivo, rito generacional y resistencia. Un paisaje distópico, abstracto y libre de estigmas en el que el cuerpo flamenco se convierte en territorio poético." data-en="Five women from different dance disciplines seek the same frequency. The braid as collective weaving, generational rite and resistance. A dystopian, abstract landscape free of stigma where the flamenco body becomes poetic territory.">Cinco mujeres de distintas disciplinas dancísticas buscan la misma frecuencia. La trenza como tejido colectivo, rito generacional y resistencia. Un paisaje distópico, abstracto y libre de estigmas en el que el cuerpo flamenco se convierte en territorio poético.</p>
+                <p class="piece-desc" data-es="Creada en el marco del Festival Ibérica Contemporánea (México), la pieza ha sido interpretada en la Gala España Clásica dentro del 20 Aniversario de Ibérica Contemporánea en la ciudad de Querétaro, México, y ha sido seleccionada en el Certamen Coreográfico de Madrid Paso a 2." data-en="Created within the framework of Festival Ibérica Contemporánea (Mexico), the piece was performed at the Gala España Clásica during the 20th Anniversary of Ibérica Contemporánea in Querétaro, Mexico, and has been selected for the Madrid Choreographic Competition Paso a 2.">Creada en el marco del Festival Ibérica Contemporánea (México), la pieza ha sido interpretada en la Gala España Clásica dentro del 20 Aniversario de Ibérica Contemporánea en la ciudad de Querétaro, México, y ha sido seleccionada en el Certamen Coreográfico de Madrid Paso a 2.</p>
+                <div class="piece-links">
+                    <a href="https://youtube.com/shorts/BKuu6iSWrHw?feature=share" target="_blank" class="piece-link piece-link-teaser">TEASER</a>
+                </div>
+                <p class="piece-links-label" data-es="Proceso creativo" data-en="Creative process">Proceso creativo</p>
+                <div class="piece-links">
+                    <a href="https://youtu.be/4Kv9qgdxKSQ" target="_blank" class="piece-link">Proceso I</a>
+                    <a href="https://youtu.be/5rOQ3Ow88gA" target="_blank" class="piece-link">Proceso II</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-pan-ayer">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="el pan de ayer/20231201_Amarantas_3_194702_MAXL8255-Mejorado-NR.jpg" alt="El pan de ayer">
+                <img src="el pan de ayer/20231201_Amarantas_3_195441_MAXL8464-Mejorado-NR.jpg" alt="El pan de ayer">
+                <img src="el pan de ayer/El pan de ayer 13 Foto Oscar Rico.JPG" alt="El pan de ayer">
+                <img src="el pan de ayer/HCR_3001.jpg" alt="El pan de ayer">
+                <img src="el pan de ayer/HCR_3174.jpg" alt="El pan de ayer">
+                <img src="el pan de ayer/HCR_3584.jpg" alt="El pan de ayer">
+                <img src="el pan de ayer/_DSC2223.JPG" alt="El pan de ayer">
+            </div>
+            <div class="piece-info">
+                <h2>El pan de ayer</h2>
+                <p class="piece-subtitle" data-es="Espectáculo · Cía. Internacional Proart" data-en="Full show · Cía. Internacional Proart">Espectáculo · Cía. Internacional Proart</p>
+                <p class="piece-desc" data-es="El Pan de Ayer es un espectáculo de la Compañía Internacional Proart bajo la dirección artística de Sandra Ostrowski. Una obra sobre cinco mujeres que tuvieron que callar para sobrevivir, que cuidaron de sus familias mientras el mundo se deshacía fuera, que alzaron la voz cuando podían y aprendieron a construir sueños sobre un lienzo de sombras." data-en="El Pan de Ayer is a show by Compañía Internacional Proart under the artistic direction of Sandra Ostrowski. A work about five women who had to be silent to survive, who cared for their families while the world fell apart outside, who raised their voices when they could and learned to build dreams on a canvas of shadows.">El Pan de Ayer es un espectáculo de la Compañía Internacional Proart bajo la dirección artística de Sandra Ostrowski. Una obra sobre cinco mujeres que tuvieron que callar para sobrevivir, que cuidaron de sus familias mientras el mundo se deshacía fuera, que alzaron la voz cuando podían y aprendieron a construir sueños sobre un lienzo de sombras.</p>
+                <p class="piece-desc" data-es="Lucía Nicolás formó parte del elenco como intérprete solista y colaboró en la construcción del lenguaje de danza española y flamenco, aportando su lenguaje técnico al universo escénico de la pieza. Un espectáculo de 55 minutos que recorrió festivales nacionales e internacionales y fue recibido en el Museo de la Ciudad de Querétaro con cobertura en prensa local." data-en="Lucía Nicolás was part of the cast as a soloist and collaborated in building the Spanish dance and flamenco language, bringing her technical vocabulary to the scenic universe of the piece. A 55-minute show that toured national and international festivals and was received at the Museum of the City of Querétaro with local press coverage.">Lucía Nicolás formó parte del elenco como intérprete solista y colaboró en la construcción del lenguaje de danza española y flamenco, aportando su lenguaje técnico al universo escénico de la pieza. Un espectáculo de 55 minutos que recorrió festivales nacionales e internacionales y fue recibido en el Museo de la Ciudad de Querétaro con cobertura en prensa local.</p>
+                <p class="piece-credits" data-es="Dirección artística: Sandra Ostrowski. Producción: Compañía Internacional Proart / Fundación Proart, México." data-en="Artistic direction: Sandra Ostrowski. Production: Compañía Internacional Proart / Fundación Proart, Mexico.">Dirección artística: Sandra Ostrowski. Producción: Compañía Internacional Proart / Fundación Proart, México.</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-encale">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="festival encalé/20 (2).png" alt="Festival Encalé">
+                <img src="festival encalé/1 (3).png" alt="Festival Encalé">
+                <img src="festival encalé/15 (2).png" alt="Festival Encalé">
+                <img src="festival encalé/9 (1).png" alt="Festival Encalé">
+                <img src="festival encalé/17 (2).png" alt="Festival Encalé">
+                <img src="festival encalé/11 (3).png" alt="Festival Encalé">
+            </div>
+            <div class="piece-info">
+                <h2>Laboratorio de Investigación Encalé</h2>
+                <p class="piece-subtitle" data-es="Festival Encalé · Flamenco In Situ · Guadalajara, México" data-en="Festival Encalé · Flamenco In Situ · Guadalajara, Mexico">Festival Encalé · Flamenco In Situ · Guadalajara, México</p>
+                <p class="piece-desc" data-es="Lucía Nicolás fue invitada especial del Festival Encalé. Flamenco In Situ, que se celebra en la ciudad de Guadalajara, México. Allí impartió diferentes talleres así como participó en el Laboratorio de Creación de la bailaora Karen Lugo." data-en="Lucía Nicolás was a special guest at Festival Encalé. Flamenco In Situ, held in the city of Guadalajara, Mexico. There she taught various workshops and participated in the Creation Laboratory led by dancer Karen Lugo.">Lucía Nicolás fue invitada especial del Festival Encalé. Flamenco In Situ, que se celebra en la ciudad de Guadalajara, México. Allí impartió diferentes talleres así como participó en el Laboratorio de Creación de la bailaora Karen Lugo.</p>
+                <div class="piece-links">
+                    <a href="https://www.instagram.com/reel/CwltHf1vE5k/?utm_source=ig_web_copy_link" target="_blank" class="piece-link piece-link-teaser">VÍDEO I</a>
+                    <a href="https://www.instagram.com/reel/CmzT-LoPayv/?utm_source=ig_web_copy_link" target="_blank" class="piece-link piece-link-teaser">VÍDEO II</a>
+                    <a href="https://www.instagram.com/p/CjVbqq9M_8o/?utm_source=ig_web_copy_link" target="_blank" class="piece-link">POST</a>
+                </div>
+                <div class="piece-links">
+                    <a href="https://www.instagram.com/encale_festival/" target="_blank" class="piece-link">@encale_festival</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-prestame-recuerdo">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="prestame un recuerdo/33fd403a-9acc-43b7-aad4-a6fc73a4b62d.jpg" alt="Préstame un recuerdo">
+                <img src="prestame un recuerdo/20221209_ProartFinDeCursos_205741_8532.jpg" alt="Préstame un recuerdo">
+                <img src="prestame un recuerdo/IMG_9460.JPG" alt="Préstame un recuerdo">
+                <img src="prestame un recuerdo/IMG_9461.JPG" alt="Préstame un recuerdo">
+            </div>
+            <div class="piece-info">
+                <h2>Préstame un recuerdo</h2>
+                <p class="piece-subtitle" data-es="Espectáculo · Cía. Internacional Proart" data-en="Full show · Cía. Internacional Proart">Espectáculo · Cía. Internacional Proart</p>
+                <p class="piece-desc" data-es="Una creación del coreógrafo brasileño Eduardo Alvés que aborda el Alzheimer desde una perspectiva radicalmente personal. A través de un lenguaje de movimiento contemporáneo y una escenografía de cajas blancas —símbolo de los recuerdos que se acumulan, se desplazan y se pierden— la pieza construye un retrato físico y emotivo de la memoria fragmentada. Una obra que no explica la enfermedad: la habita." data-en="A creation by Brazilian choreographer Eduardo Alvés that addresses Alzheimer's from a radically personal perspective. Through a contemporary movement language and a set design of white boxes —a symbol of memories that accumulate, shift and are lost— the piece builds a physical and emotional portrait of fragmented memory. A work that doesn't explain the disease: it inhabits it.">Una creación del coreógrafo brasileño Eduardo Alvés que aborda el Alzheimer desde una perspectiva radicalmente personal. A través de un lenguaje de movimiento contemporáneo y una escenografía de cajas blancas —símbolo de los recuerdos que se acumulan, se desplazan y se pierden— la pieza construye un retrato físico y emotivo de la memoria fragmentada. Una obra que no explica la enfermedad: la habita.</p>
+                <p class="piece-desc" data-es="Producida en el marco de la Compañía Internacional Proart, se estrenó en el Teatro Metropolitano de Querétaro en 2022." data-en="Produced within the framework of Compañía Internacional Proart, it premiered at the Teatro Metropolitano de Querétaro in 2022.">Producida en el marco de la Compañía Internacional Proart, se estrenó en el Teatro Metropolitano de Querétaro en 2022.</p>
+                <div class="piece-links">
+                    <a href="https://www.instagram.com/reels/ClzROgnpcT0/" target="_blank" class="piece-link piece-link-teaser">TEASER</a>
+                </div>
+                <p class="piece-credits" data-es="Dirección artística: Sandra Ostrowski · Dirección general: Adriana Covarrubias · Coreografía: Eduardo Alvés · Intérpretes: Alejandra Sosa, Arturo Sandoval, Eduar Morillo, Sandra Ostrowski, Lucía Nicolás · Diseño de iluminación: Marcela Dovali · Diseño de vestuario: Sandra Ostrowski y Eduardo Alvés · Confección de vestuario: Lorenza Lameiras · Producción: Compañía Internacional Proart, Querétaro, México." data-en="Artistic direction: Sandra Ostrowski · General direction: Adriana Covarrubias · Choreography: Eduardo Alvés · Performers: Alejandra Sosa, Arturo Sandoval, Eduar Morillo, Sandra Ostrowski, Lucía Nicolás · Lighting design: Marcela Dovali · Costume design: Sandra Ostrowski and Eduardo Alvés · Costume making: Lorenza Lameiras · Production: Compañía Internacional Proart, Querétaro, Mexico.">Dirección artística: Sandra Ostrowski · Dirección general: Adriana Covarrubias · Coreografía: Eduardo Alvés · Intérpretes: Alejandra Sosa, Arturo Sandoval, Eduar Morillo, Sandra Ostrowski, Lucía Nicolás · Diseño de iluminación: Marcela Dovali · Diseño de vestuario: Sandra Ostrowski y Eduardo Alvés · Confección de vestuario: Lorenza Lameiras · Producción: Compañía Internacional Proart, Querétaro, México.</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-dulces-alegrias">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="Dulces alegrias/dclassic 2023-10-28 111217.289.JPEG" alt="Dulces Alegrías">
+                <img src="Dulces alegrias/ciproart jr C-15.JPG" alt="Dulces Alegrías">
+                <img src="Dulces alegrias/ciproart jr C-23.JPG" alt="Dulces Alegrías">
+                <img src="Dulces alegrias/ciproart jr C-24.JPG" alt="Dulces Alegrías">
+                <img src="Dulces alegrias/ciproart jr C-25.JPG" alt="Dulces Alegrías">
+                <img src="Dulces alegrias/ciproart jr C-26.JPG" alt="Dulces Alegrías">
+            </div>
+            <div class="piece-info">
+                <h2>Dulces Alegrías</h2>
+                <p class="piece-subtitle" data-es="Espectáculo · Ballet Junior de Danza Clásica y Danza Española Proart" data-en="Full show · Proart Classical and Spanish Dance Junior Ballet">Espectáculo · Ballet Junior de Danza Clásica y Danza Española Proart</p>
+                <p class="piece-desc" data-es="Érase una vez, una aldea en la que siempre brillaba el sol y todo era posible. Era un lugar de lavanda, chile y nopal, habitado por muñecas y un millón de colibríes. Aquellas muñecas, que un día fueron olvidadas por sus dueñas, seguían habitando en el eco feliz de aquellos juegos infantiles, y ahí residía su magia. La aldea sonaba a risa y canción, y sabía a mole, chocolate y alegrías. Allí no existían los días grises, y si alguna lágrima de tristeza se atrevía a cruzar los muros, se le daba un abrazo que la convertía en caricia." data-en="Once upon a time, there was a village where the sun always shone and everything was possible. It was a place of lavender, chili and cactus, inhabited by dolls and a million hummingbirds. Those dolls, once forgotten by their owners, still lived in the happy echo of those childhood games, and therein lay their magic. The village sounded of laughter and song, and tasted of mole, chocolate and joy. There were no grey days, and if any tear of sadness dared to cross the walls, it was given a hug that turned it into a caress.">Érase una vez, una aldea en la que siempre brillaba el sol y todo era posible. Era un lugar de lavanda, chile y nopal, habitado por muñecas y un millón de colibríes. Aquellas muñecas, que un día fueron olvidadas por sus dueñas, seguían habitando en el eco feliz de aquellos juegos infantiles, y ahí residía su magia. La aldea sonaba a risa y canción, y sabía a mole, chocolate y alegrías. Allí no existían los días grises, y si alguna lágrima de tristeza se atrevía a cruzar los muros, se le daba un abrazo que la convertía en caricia.</p>
+                <p class="piece-desc" data-es="Todo era divertido, y las muñecas se pasaban las horas cantando, corriendo descalzas y haciendo girar sus faldas al ritmo que les marcaba el viento. Era un lugar de inocencia, ternura y amor. Pero un día, las muñecas que hasta entonces habían estado ajenas al mundo que estaba al otro lado, se dieron cuenta de que fuera, la vida era muy distinta a lo que ellas pensaban. Preocupadas, algunas muñecas decidieron hacer algo. Los animaron a quitarse los zapatos y a sentir la hierba, a bailar con los ojos cerrados y a contar todos los colores que esconden las alas de las mariposas. Y aquellas personas empezaron a recordar lo que significaba volver a ser un niño." data-en="Everything was fun, and the dolls spent their hours singing, running barefoot and spinning their skirts to the rhythm the wind set for them. It was a place of innocence, tenderness and love. But one day, the dolls who had been oblivious to the world on the other side, realized that outside, life was very different from what they thought. Worried, some dolls decided to do something. They encouraged people to take off their shoes and feel the grass, to dance with their eyes closed and count all the colors hidden in butterfly wings. And those people began to remember what it meant to be a child again.">Todo era divertido, y las muñecas se pasaban las horas cantando, corriendo descalzas y haciendo girar sus faldas al ritmo que les marcaba el viento. Era un lugar de inocencia, ternura y amor. Pero un día, las muñecas que hasta entonces habían estado ajenas al mundo que estaba al otro lado, se dieron cuenta de que fuera, la vida era muy distinta a lo que ellas pensaban. Preocupadas, algunas muñecas decidieron hacer algo. Los animaron a quitarse los zapatos y a sentir la hierba, a bailar con los ojos cerrados y a contar todos los colores que esconden las alas de las mariposas. Y aquellas personas empezaron a recordar lo que significaba volver a ser un niño.</p>
+                <div class="piece-links">
+                    <a href="Dulces alegrias/FORMATO CUADRADO JUNIOR.MOV" target="_blank" class="piece-link piece-link-teaser">TEASER</a>
+                </div>
+                <p class="piece-credits" data-es="Creación: Lucía Nicolás y Vanesa Ramos · Dirección: Sandra Ostrowski · Dirección general: Adriana Covarrubias · Cuento: Sara Fernández · Intérpretes: Ballet Junior de Danza Clásica y Danza Española Proart · Diseño de vestuario: Lucía Nicolás y Sandra Ostrowski · Confección de vestuario: Lorenza Lameiras." data-en="Creation: Lucía Nicolás and Vanesa Ramos · Direction: Sandra Ostrowski · General direction: Adriana Covarrubias · Performers: Proart Classical and Spanish Dance Junior Ballet · Costume design: Lucía Nicolás and Sandra Ostrowski · Costume making: Lorenza Lameiras.">Creación: Lucía Nicolás y Vanesa Ramos · Dirección: Sandra Ostrowski · Dirección general: Adriana Covarrubias · Cuento: Sara Fernández · Intérpretes: Ballet Junior de Danza Clásica y Danza Española Proart · Diseño de vestuario: Lucía Nicolás y Sandra Ostrowski · Confección de vestuario: Lorenza Lameiras.</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-manana-vendré">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="mañana vendré a buscarte/10003651_10204994509596811_1559998939681484450_o.jpg" alt="Mañana vendré a buscarte">
+                <img src="mañana vendré a buscarte/GBM17-135.jpg" alt="Mañana vendré a buscarte">
+                <img src="mañana vendré a buscarte/GBM17-155.jpg" alt="Mañana vendré a buscarte">
+                <img src="mañana vendré a buscarte/GBM17-158.jpg" alt="Mañana vendré a buscarte">
+            </div>
+            <div class="piece-info">
+                <h2>Mañana vendré a buscarte</h2>
+                <p class="piece-subtitle" data-es="Dúo · Danza Española · 2015" data-en="Duo · Spanish Dance · 2015">Dúo · Danza Española · 2015</p>
+                <p class="piece-desc" data-es="La primera creación de Lucía Nicolás, una pieza de dúo creada junto a Alejandro Muñoz en 2015. La obra parte de la guerra civil española para contar una historia íntima: una mujer que espera a un marido que no vuelve. Cuando la radio anuncia el fin de la guerra, él aparece — o quizá solo su recuerdo." data-en="Lucía Nicolás's first creation, a duo piece created with Alejandro Muñoz in 2015. The work departs from the Spanish Civil War to tell an intimate story: a woman waiting for a husband who never returns. When the radio announces the end of the war, he appears — or perhaps only his memory.">La primera creación de Lucía Nicolás, una pieza de dúo creada junto a Alejandro Muñoz en 2015. La obra parte de la guerra civil española para contar una historia íntima: una mujer que espera a un marido que no vuelve. Cuando la radio anuncia el fin de la guerra, él aparece — o quizá solo su recuerdo.</p>
+                <p class="piece-desc" data-es="Juntos atraviesan el dolor de la ausencia, la rabia del abandono, la ternura del reencuentro y una alegría frágil que se desvanece tan pronto como llegó. La pieza vive en la ambigüedad entre lo real y lo soñado, entre la presencia y la memoria, y en la pregunta que nunca se resuelve: ¿ha vuelto de verdad o es el cuerpo quien se niega a soltar lo que ama?" data-en="Together they traverse the pain of absence, the rage of abandonment, the tenderness of reunion and a fragile joy that fades as quickly as it came. The piece lives in the ambiguity between the real and the dreamed, between presence and memory, and in the question that is never resolved: has he truly returned, or is it the body that refuses to let go of what it loves?">Juntos atraviesan el dolor de la ausencia, la rabia del abandono, la ternura del reencuentro y una alegría frágil que se desvanece tan pronto como llegó. La pieza vive en la ambigüedad entre lo real y lo soñado, entre la presencia y la memoria, y en la pregunta que nunca se resuelve: ¿ha vuelto de verdad o es el cuerpo quien se niega a soltar lo que ama?</p>
+                <p class="piece-credits" data-es="Coreografía e interpretación: Alejandro Muñoz y Lucía Nicolás · Diseño de vestuario: María Dolores Marín." data-en="Choreography and performance: Alejandro Muñoz and Lucía Nicolás · Costume design: María Dolores Marín.">Coreografía e interpretación: Alejandro Muñoz y Lucía Nicolás · Diseño de vestuario: María Dolores Marín.</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-mismidad">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="MISMIDAD/b55d0264-6ba7-4d95-a8c1-0fc3c15cf715.jpg" alt="Mismidad">
+                <img src="MISMIDAD/7fb69b64-140b-4452-8947-297cb4bb846c.jpg" alt="Mismidad">
+                <img src="MISMIDAD/20230310_ProartVoz_A_210055_0331_Original.JPEG" alt="Mismidad">
+                <img src="MISMIDAD/20230310_ProartVoz_A_210407_0390_Original.JPEG" alt="Mismidad">
+            </div>
+            <div class="piece-info">
+                <h2>Mismidad</h2>
+                <p class="piece-subtitle" data-es="Dúo · Danza Contemporánea + Flamenco · 30 min" data-en="Duo · Contemporary Dance + Flamenco · 30 min">Dúo · Danza Contemporánea + Flamenco · 30 min</p>
+                <p class="piece-desc" data-es="La Mismidad da título al recorrido personal del ser humano tras la búsqueda de su propia identidad. Nos muestra cómo nuestra esencia se crea, cambia y evoluciona a través del tiempo, cómo nos afecta el ser del otro cuestionándonos lo que somos y queremos ser." data-en="Mismidad gives title to the personal journey of the human being in search of their own identity. It shows us how our essence is created, changes and evolves through time, how the being of the other affects us, questioning what we are and what we want to be.">La Mismidad da título al recorrido personal del ser humano tras la búsqueda de su propia identidad. Nos muestra cómo nuestra esencia se crea, cambia y evoluciona a través del tiempo, cómo nos afecta el ser del otro cuestionándonos lo que somos y queremos ser.</p>
+                <p class="piece-desc" data-es="Una pieza multidisciplinar que desarrolla un nuevo lenguaje dancístico basado en el mestizaje de la Danza Contemporánea y el Flamenco, generando nuevos mundos y formas que asientan sus bases en la importancia del pensamiento crítico. La vida es un proceso de equilibrio, una balanza a la que debemos subir sin miedo a desestabilizar y, sobre todo, sin miedo a caer." data-en="A multidisciplinary piece that develops a new dance language based on the blend of Contemporary Dance and Flamenco, generating new worlds and forms grounded in the importance of critical thinking. Life is a process of balance, a scale we must step on without fear of destabilizing and, above all, without fear of falling.">Una pieza multidisciplinar que desarrolla un nuevo lenguaje dancístico basado en el mestizaje de la Danza Contemporánea y el Flamenco, generando nuevos mundos y formas que asientan sus bases en la importancia del pensamiento crítico. La vida es un proceso de equilibrio, una balanza a la que debemos subir sin miedo a desestabilizar y, sobre todo, sin miedo a caer.</p>
+                <p class="piece-desc" data-es="Interpretada en el Festival Flamenco de Cuba y en la clausura del Festival Ibérica Contemporánea." data-en="Performed at the Flamenco Festival of Cuba and at the closing of Festival Ibérica Contemporánea.">Interpretada en el Festival Flamenco de Cuba y en la clausura del Festival Ibérica Contemporánea.</p>
+                <p class="piece-credits" data-es="Idea original: Sandra Ostrowski y Lucía Nicolás · Dirección: Sandra Ostrowski · Coreografía e interpretación: Sandra Ostrowski y Lucía Nicolás · Dirección de escena: Noelia Rua · Diseño de vestuario: Sandra Ostrowski · Producción: Compañía Internacional Proart." data-en="Original idea: Sandra Ostrowski and Lucía Nicolás · Direction: Sandra Ostrowski · Choreography and performance: Sandra Ostrowski and Lucía Nicolás · Stage direction: Noelia Rua · Costume design: Sandra Ostrowski · Production: Compañía Internacional Proart.">Idea original: Sandra Ostrowski y Lucía Nicolás · Dirección: Sandra Ostrowski · Coreografía e interpretación: Sandra Ostrowski y Lucía Nicolás · Dirección de escena: Noelia Rua · Diseño de vestuario: Sandra Ostrowski · Producción: Compañía Internacional Proart.</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-limoneando">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="Limoneando/LIMONEANDO.jpg" alt="Limoneando">
+                <img src="Limoneando/IMG_20190215_110300_698.jpg" alt="Limoneando">
+                <img src="Limoneando/Imagen2.png" alt="Limoneando">
+                <img src="Limoneando/Imagen5.png" alt="Limoneando">
+            </div>
+            <div class="piece-info">
+                <h2>Limoneando</h2>
+                <p class="piece-subtitle" data-es="Espectáculo · Danza Española · ~1h 15min" data-en="Full show · Spanish Dance · ~1h 15min">Espectáculo · Danza Española · ~1h 15min</p>
+                <p class="piece-desc" data-es="Ocho años, 348 km y muchas maletas. Limoneando nace como un homenaje a Murcia, a sus raíces, a su tierra. Una ruta por la Región desde un punto de vista creativo, joven y renovador, contada a través de las cuatro formas de la Danza Española: Folklore, Escuela Bolera, Flamenco y Danza Estilizada." data-en="Eight years, 348 km and many suitcases. Limoneando is born as a tribute to Murcia, its roots, its land. A journey through the Region from a creative, young and renewed perspective, told through the four forms of Spanish Dance: Folklore, Escuela Bolera, Flamenco and Stylized Dance.">Ocho años, 348 km y muchas maletas. Limoneando nace como un homenaje a Murcia, a sus raíces, a su tierra. Una ruta por la Región desde un punto de vista creativo, joven y renovador, contada a través de las cuatro formas de la Danza Española: Folklore, Escuela Bolera, Flamenco y Danza Estilizada.</p>
+                <p class="piece-desc" data-es="Una obra de danza que consigue emocionar, hacer reír y encender la pasión por la tradición murciana desde una perspectiva fresca y personal. Con humor, con cariño, con emotividad. Cuatro bailarinas profesionales construyen un lenguaje propio nutrido de la Dramaturgia y la Danza Contemporánea, donde la tradición se vive como algo cercano y vivo." data-en="A dance work that moves, makes you laugh and ignites passion for Murcian tradition from a fresh and personal perspective. With humor, with affection, with emotion. Four professional dancers build their own language nourished by Dramaturgy and Contemporary Dance, where tradition is experienced as something close and alive.">Una obra de danza que consigue emocionar, hacer reír y encender la pasión por la tradición murciana desde una perspectiva fresca y personal. Con humor, con cariño, con emotividad. Cuatro bailarinas profesionales construyen un lenguaje propio nutrido de la Dramaturgia y la Danza Contemporánea, donde la tradición se vive como algo cercano y vivo.</p>
+                <p class="piece-credits" data-es="Dirección: Lucía Nicolás · Asistente de dirección: Mª Dolores Marín · Coreografía: Lucía Nicolás, Mª Dolores Marín y Nella Madarro · Guion y Dramaturgia: Maite Piqueras · Diseño de iluminación: Jesús Palazón · Diseño de vestuario: Inmaculada Serrano, Maite Piqueras y Mª Dolores Marín · Elenco: Lucía Nicolás, María Valverde, Lucía Marcos y Cecilia Ródenas." data-en="Direction: Lucía Nicolás · Assistant direction: Mª Dolores Marín · Choreography: Lucía Nicolás, Mª Dolores Marín and Nella Madarro · Script and Dramaturgy: Maite Piqueras · Lighting design: Jesús Palazón · Costume design: Inmaculada Serrano, Maite Piqueras and Mª Dolores Marín · Cast: Lucía Nicolás, María Valverde, Lucía Marcos and Cecilia Ródenas.">Dirección: Lucía Nicolás · Asistente de dirección: Mª Dolores Marín · Coreografía: Lucía Nicolás, Mª Dolores Marín y Nella Madarro · Guion y Dramaturgia: Maite Piqueras · Diseño de iluminación: Jesús Palazón · Diseño de vestuario: Inmaculada Serrano, Maite Piqueras y Mª Dolores Marín · Elenco: Lucía Nicolás, María Valverde, Lucía Marcos y Cecilia Ródenas.</p>
+                <div class="piece-links">
+                    <a href="https://www.youtube.com/watch?v=Y24iCp31htA" target="_blank" class="piece-link piece-link-teaser">TEASER</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-flores-apagadas">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="COLABORACION YOMY/7ebd4492-1c64-4ac8-91f4-d505fef2a1eb.jpg" alt="Flores Apagadas">
+                <img src="COLABORACION YOMY/b6c22ebc-a918-414f-a4d4-e06ab1772750.jpg" alt="Flores Apagadas">
+                <img src="COLABORACION YOMY/736a398f-f0f1-49a1-a887-66f32f9d0b4c.jpg" alt="Flores Apagadas">
+            </div>
+            <div class="piece-info">
+                <h2>Flores Apagadas</h2>
+                <p class="piece-subtitle" data-es="Videoclip · Dirección escénica y estética · 2023" data-en="Music video · Stage & aesthetic direction · 2023">Videoclip · Dirección escénica y estética · 2023</p>
+                <p class="piece-desc" data-es="En 2023, Lucía Nicolás colaboró con la cantante YOMY como directora escénica y estética en el videoclip de Flores Apagadas. Un trabajo en el que puso al servicio de la imagen musical su mirada como coreógrafa, cuidando la puesta en escena, la narrativa visual y la estética del proyecto." data-en="In 2023, Lucía Nicolás collaborated with singer YOMY as stage and aesthetic director for the Flores Apagadas music video. A project where she brought her choreographer's vision to the musical image, curating the mise-en-scène, visual narrative and aesthetic of the project.">En 2023, Lucía Nicolás colaboró con la cantante YOMY como directora escénica y estética en el videoclip de Flores Apagadas. Un trabajo en el que puso al servicio de la imagen musical su mirada como coreógrafa, cuidando la puesta en escena, la narrativa visual y la estética del proyecto.</p>
+                <p class="piece-desc" data-es="Una experiencia que amplía su lenguaje creativo más allá del escenario, llevando la dirección artística al formato audiovisual." data-en="An experience that expands her creative language beyond the stage, bringing artistic direction to the audiovisual format.">Una experiencia que amplía su lenguaje creativo más allá del escenario, llevando la dirección artística al formato audiovisual.</p>
+                <p class="piece-links-label" data-es="Ver videoclip" data-en="Watch video">Ver videoclip</p>
+                <div class="piece-links">
+                    <a href="https://www.youtube.com/watch?v=mNJ8jcKNFyg" target="_blank" class="piece-link piece-link-teaser" data-es="▶ Videoclip" data-en="▶ Music Video">▶ Videoclip</a>
+                </div>
+                <div class="piece-credits" data-es="Artista: YOMY<br>Dirección escénica y estética: Lucía Nicolás" data-en="Artist: YOMY<br>Stage & aesthetic direction: Lucía Nicolás">Artista: YOMY<br>Dirección escénica y estética: Lucía Nicolás</div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-ta-ria">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="TA RIÁ/WhatsApp Image 2026-04-06 at 10.04.02 (2).jpeg" alt="Ta Riá">
+                <img src="TA RIÁ/WhatsApp Image 2026-04-06 at 10.04.02.jpeg" alt="Ta Riá">
+                <img src="TA RIÁ/WhatsApp Image 2026-04-06 at 10.04.03 (3).jpeg" alt="Ta Riá">
+                <img src="TA RIÁ/WhatsApp Image 2026-04-06 at 10.04.03.jpeg" alt="Ta Riá">
+            </div>
+            <div class="piece-info">
+                <h2>Ta Riá</h2>
+                <p class="piece-subtitle" data-es="Videoclip · Coreógrafa y bailarina · 2025" data-en="Music video · Choreographer & dancer · 2025">Videoclip · Coreógrafa y bailarina · 2025</p>
+                <p class="piece-desc" data-es="En 2025, Lucía Nicolás participó como coreógrafa y bailarina en el videoclip de Ta-riá, single de la cantante YOMY — su hermana. Una canción cargada de emoción que YOMY le dedicó y en la que Lucía puso cuerpo y movimiento a algo profundamente personal." data-en="In 2025, Lucía Nicolás participated as choreographer and dancer in the music video for Ta-riá, a single by singer YOMY — her sister. An emotionally charged song that YOMY dedicated to her, in which Lucía gave body and movement to something deeply personal.">En 2025, Lucía Nicolás participó como coreógrafa y bailarina en el videoclip de Ta-riá, single de la cantante YOMY — su hermana. Una canción cargada de emoción que YOMY le dedicó y en la que Lucía puso cuerpo y movimiento a algo profundamente personal.</p>
+                <p class="piece-desc" data-es="Una colaboración donde lo artístico y lo familiar se funden, traduciendo en danza lo que las palabras de la canción ya decían." data-en="A collaboration where the artistic and the familial merge, translating into dance what the song's words already said.">Una colaboración donde lo artístico y lo familiar se funden, traduciendo en danza lo que las palabras de la canción ya decían.</p>
+                <p class="piece-links-label" data-es="Ver videoclip" data-en="Watch video">Ver videoclip</p>
+                <div class="piece-links">
+                    <a href="https://www.youtube.com/watch?v=A9e6lE0J0Kc" target="_blank" class="piece-link piece-link-teaser" data-es="▶ Videoclip" data-en="▶ Music Video">▶ Videoclip</a>
+                </div>
+                <div class="piece-credits" data-es="Artista: YOMY<br>Coreografía y baile: Lucía Nicolás" data-en="Artist: YOMY<br>Choreography & dance: Lucía Nicolás">Artista: YOMY<br>Coreografía y baile: Lucía Nicolás</div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-las-supers">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="SUPERS MARIANA COLLADO/IMG_7758.jpg" alt="Las Supers">
+                <img src="SUPERS MARIANA COLLADO/IMG_7762.jpg" alt="Las Supers">
+                <img src="SUPERS MARIANA COLLADO/IMG_7763.jpg" alt="Las Supers">
+                <img src="SUPERS MARIANA COLLADO/IMG_7765.jpg" alt="Las Supers">
+                <img src="SUPERS MARIANA COLLADO/IMG_7767.jpg" alt="Las Supers">
+            </div>
+            <div class="piece-info">
+                <h2>Las Supers</h2>
+                <p class="piece-subtitle" data-es="Poderes, capas y algún que otro accesorio · Cía. Internacional Proart · X Festival Ibérica Contemporánea" data-en="Powers, capes and the occasional accessory · Cía. Internacional Proart · X Festival Ibérica Contemporánea">Poderes, capas y algún que otro accesorio · Cía. Internacional Proart · X Festival Ibérica Contemporánea</p>
+                <p class="piece-desc" data-es="Las Supers: Poderes, capas y algún que otro accesorio. Es una pieza creada por Mariana Collado para la Compañía Internacional Proart, dentro del marco del X Festival Ibérica Contemporánea en México. Una pieza que explora el universo de las superheroínas encarnadas en cuatro bailarinas de danza española y danza contemporánea, todas usando el zapato de tacón." data-en="Las Supers: Powers, capes and the occasional accessory. A piece created by Mariana Collado for Compañía Internacional Proart, within the framework of the X Festival Ibérica Contemporánea in Mexico. A piece that explores the universe of superheroines embodied by four Spanish and contemporary dance performers, all wearing heeled shoes.">Las Supers: Poderes, capas y algún que otro accesorio. Es una pieza creada por Mariana Collado para la Compañía Internacional Proart, dentro del marco del X Festival Ibérica Contemporánea en México. Una pieza que explora el universo de las superheroínas encarnadas en cuatro bailarinas de danza española y danza contemporánea, todas usando el zapato de tacón.</p>
+                <blockquote class="piece-desc" data-es="«Mi poder reside en el poder de todas estas mujeres que me rodean, que hacen que me eleve hasta el lugar donde los juicios, los cuestionamientos y las preguntas sin respuesta cobren el sentido necesario para vivir la vida liberadas y empoderadas.»" data-en="'My power resides in the power of all these women around me, who make me rise to the place where judgments, questionings and unanswered questions gain the meaning needed to live life liberated and empowered.'">«Mi poder reside en el poder de todas estas mujeres que me rodean, que hacen que me eleve hasta el lugar donde los juicios, los cuestionamientos y las preguntas sin respuesta cobren el sentido necesario para vivir la vida liberadas y empoderadas.»</blockquote>
+                <p class="piece-credits" data-es="Coreografía y dirección: Mariana Collado · Intérpretes: María Belchí, Sandra Ostrowski, Sandra Díez y Lucía Nicolás · Música: Diego Gálvez y Lucía Nicolás · Apoyo a la producción: Fundación Proart e Ibérica Contemporánea." data-en="Choreography and direction: Mariana Collado · Performers: María Belchí, Sandra Ostrowski, Sandra Díez and Lucía Nicolás · Music: Diego Gálvez and Lucía Nicolás · Production support: Fundación Proart and Ibérica Contemporánea.">Coreografía y dirección: Mariana Collado · Intérpretes: María Belchí, Sandra Ostrowski, Sandra Díez y Lucía Nicolás · Música: Diego Gálvez y Lucía Nicolás · Apoyo a la producción: Fundación Proart e Ibérica Contemporánea.</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- INVESTIGACIÓN -->
+    <section id="investigacion" class="section section-investigacion">
+        <div class="section-inner">
+            <h2 data-es="Investigación" data-en="Research">Investigación</h2>
+            <div class="investigacion-content">
+                <div class="investigacion-item">
+                    <h3 class="investigacion-title">El caos creativo</h3>
+                    <p class="investigacion-subtitle" data-es="Reflexiones sobre la creación coreográfica contemporánea en el flamenco · TFM · Máster en Flamencología · 2024" data-en="Reflections on contemporary choreographic creation in flamenco · Master's Thesis · MA in Flamencology · 2024">Reflexiones sobre la creación coreográfica contemporánea en el flamenco · TFM · Máster en Flamencología · 2024</p>
+                    <p data-es="El caos creativo. Reflexiones sobre la creación coreográfica contemporánea en el flamenco es el Trabajo de Fin de Máster de Lucía Nicolás, presentado en 2024 dentro del Máster de Flamencología. La investigación se adentra en los procesos de creación coreográfica del flamenco contemporáneo, explorando cómo los creadores y creadoras actuales construyen sus obras, qué metodologías siguen, qué les impulsa a crear y qué papel juega la figura del espectador en ese proceso."
+                       data-en="El caos creativo. Reflections on contemporary choreographic creation in flamenco is Lucía Nicolás's Master's Thesis, presented in 2024 as part of her MA in Flamencology. The research delves into the choreographic creation processes of contemporary flamenco, exploring how current creators build their works, what methodologies they follow, what drives them to create, and what role the spectator plays in that process.">
+                        El caos creativo. Reflexiones sobre la creación coreográfica contemporánea en el flamenco es el Trabajo de Fin de Máster de Lucía Nicolás, presentado en 2024 dentro del Máster de Flamencología. La investigación se adentra en los procesos de creación coreográfica del flamenco contemporáneo, explorando cómo los creadores y creadoras actuales construyen sus obras, qué metodologías siguen, qué les impulsa a crear y qué papel juega la figura del espectador en ese proceso.
+                    </p>
+                    <p data-es="A través de un recorrido por los antecedentes creativos del baile flamenco desde principios del siglo XX hasta la actualidad, y del acercamiento directo a artistas representativos del panorama actual, el trabajo busca dar visibilidad a unos métodos de creación que, a diferencia de lo que ocurre en la danza contemporánea o clásica, rara vez se documentan o se analizan en profundidad. El resultado es una reflexión que nace de la propia práctica como coreógrafa y de la búsqueda de nuevos lenguajes con los que seguir haciendo evolucionar el flamenco sin perder sus raíces."
+                       data-en="Through a journey across the creative antecedents of flamenco dance from the early 20th century to the present, and through direct engagement with representative artists of the current scene, the work seeks to give visibility to creation methods that, unlike what happens in contemporary or classical dance, are rarely documented or analyzed in depth. The result is a reflection born from her own practice as a choreographer and from the search for new languages with which to keep evolving flamenco without losing its roots.">
+                        A través de un recorrido por los antecedentes creativos del baile flamenco desde principios del siglo XX hasta la actualidad, y del acercamiento directo a artistas representativos del panorama actual, el trabajo busca dar visibilidad a unos métodos de creación que, a diferencia de lo que ocurre en la danza contemporánea o clásica, rara vez se documentan o se analizan en profundidad. El resultado es una reflexión que nace de la propia práctica como coreógrafa y de la búsqueda de nuevos lenguajes con los que seguir haciendo evolucionar el flamenco sin perder sus raíces.
+                    </p>
+                    <a href="Investigación/EL CAOS CREATIVO. TFM Lucía Nicolas.pdf" target="_blank" class="investigacion-link" data-es="Leer TFM completo (PDF)" data-en="Read full thesis (PDF)">Leer TFM completo (PDF)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROSA -->
+    <section id="prosa" class="section section-prosa">
+        <div class="section-inner">
+            <h2 data-es="Prosa" data-en="Prose">Prosa</h2>
+            <div class="prosa-content">
+                <div class="prosa-layout">
+                    <div class="prosa-image">
+                        <img src="FOTOS/IMG-20180408-WA0008.jpg" alt="Lucía Nicolás">
+                    </div>
+                    <div class="prosa-text">
+                        <p class="prosa-intro" data-es="Cuando no bailo, escribo." data-en="When I don't dance, I write.">Cuando no bailo, escribo.</p>
+                        <p class="prosa-desc" data-es="Donde nadie quiere mirar es el espacio donde Lucía deposita lo que no cabe en el cuerpo. Un blog de textos, reflexiones y fragmentos que nacen del mismo lugar que sus piezas: la necesidad de decir algo que no se puede callar." data-en="Donde nadie quiere mirar is the space where Lucía deposits what doesn't fit in the body. A blog of texts, reflections and fragments born from the same place as her pieces: the need to say something that cannot be silenced.">Donde nadie quiere mirar es el espacio donde Lucía deposita lo que no cabe en el cuerpo. Un blog de textos, reflexiones y fragmentos que nacen del mismo lugar que sus piezas: la necesidad de decir algo que no se puede callar.</p>
+                        <a href="https://dondenadiequieremirar.blogspot.com/" target="_blank" class="investigacion-link" data-es="Leer el blog" data-en="Read the blog">Leer el blog</a>
+                    </div>
+                </div>
+                <blockquote>
+                    <p data-es="«El cuerpo recuerda lo que la palabra olvida. Bailar es traducir esa memoria en presente, hacerla carne, hacerla gesto, hacerla temblor.»"
+                       data-en="'The body remembers what words forget. To dance is to translate that memory into the present, make it flesh, make it gesture, make it tremor.'">
+                        «El cuerpo recuerda lo que la palabra olvida. Bailar es traducir esa memoria en presente, hacerla carne, hacerla gesto, hacerla temblor.»
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section-contacto">
+        <div class="section-inner">
+            <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+            <div class="contacto-content">
+                <p data-es="Para colaboraciones, programación o cualquier consulta:" data-en="For collaborations, programming or any inquiry:">
+                    Para colaboraciones, programación o cualquier consulta:
+                </p>
+                <a href="mailto:d.esp.lucianicolas@gmail.com" class="contact-email">d.esp.lucianicolas@gmail.com</a>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nicolaslucia__/" target="_blank" aria-label="Instagram">Instagram</a>
+                    <a href="https://www.youtube.com/@lucianicolas__" target="_blank" aria-label="YouTube">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 Lucía Nicolás. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
