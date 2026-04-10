@@ -692,7 +692,8 @@ nav a:hover {
     aspect-ratio: 3 / 4;
 }
 
-.card-img img {
+.card-img img,
+.card-img video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -700,7 +701,8 @@ nav a:hover {
     filter: grayscale(50%) sepia(20%) brightness(0.7) contrast(1.1);
 }
 
-.creacion-card:hover .card-img img {
+.creacion-card:hover .card-img img,
+.creacion-card:hover .card-img video {
     transform: scale(1.05);
     filter: grayscale(20%) sepia(15%) brightness(0.85) contrast(1.05);
 }
@@ -790,17 +792,20 @@ nav a:hover {
     gap: 1rem;
 }
 
-.piece-gallery img {
+.piece-gallery img,
+.piece-gallery video {
     width: 100%;
     object-fit: cover;
     filter: grayscale(30%) sepia(15%) contrast(1.05);
 }
 
-.piece-gallery img:first-child {
+.piece-gallery img:first-child,
+.piece-gallery video:first-child {
     aspect-ratio: 3 / 2;
 }
 
-.piece-gallery img:not(:first-child) {
+.piece-gallery img:not(:first-child),
+.piece-gallery video:not(:first-child) {
     aspect-ratio: 4 / 3;
 }
 
