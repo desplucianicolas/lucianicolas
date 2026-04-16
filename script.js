@@ -129,38 +129,89 @@
         }
     });
 
-    // ─── Prensa Lightbox ─────────────────
-    const lightbox = document.getElementById('prensa-lightbox');
-    const lightboxImg = document.getElementById('prensa-lightbox-img');
-    const lightboxClose = document.getElementById('prensa-lightbox-close');
+    // ─── Prensa Carousel ─────────────────
+    const prensaTrack = document.querySelector('.prensa-track');
+    const prensaSlides = document.querySelectorAll('.prensa-slide');
+    const prensaPrev = document.querySelector('.prensa-prev');
+    const prensaNext = document.querySelector('.prensa-next');
+    const prensaDotsContainer = document.querySelector('.prensa-dots');
+    let prensaIndex = 0;
 
-    document.querySelectorAll('#prensa .prensa-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
+    // Create dots
+    prensaSlides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('prensa-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        prensaDotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+        prensaIndex = index;
+        prensaTrack.style.transform = `translateX(-${prensaIndex * 100}%)`;
+        document.querySelectorAll('.prensa-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === prensaIndex);
+        });
+    }
+
+    prensaPrev.addEventListener('click', () => {
+        goToSlide(prensaIndex > 0 ? prensaIndex - 1 : prensaSlides.length - 1);
+    });
+
+    prensaNext.addEventListener('click', () => {
+        goToSlide(prensaIndex < prensaSlides.length - 1 ? prensaIndex + 1 : 0);
+    });
+
+    // ─── Prensa Zoom ─────────────────
+    const prensaZoom = document.getElementById('prensa-zoom');
+    const prensaZoomImg = document.getElementById('prensa-zoom-img');
+    const prensaZoomIn = document.getElementById('prensa-zoom-in');
+    const prensaZoomOut = document.getElementById('prensa-zoom-out');
+    const prensaZoomClose = document.getElementById('prensa-zoom-close');
+    let zoomLevel = 1;
+
+    prensaSlides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const img = slide.querySelector('img');
             if (img) {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('open');
+                prensaZoomImg.src = img.src;
+                zoomLevel = 1;
+                prensaZoomImg.style.transform = `scale(${zoomLevel})`;
+                prensaZoom.classList.add('open');
                 document.body.style.overflow = 'hidden';
             }
         });
     });
 
-    lightboxClose.addEventListener('click', () => {
-        lightbox.classList.remove('open');
-        document.body.style.overflow = '';
+    prensaZoomIn.addEventListener('click', () => {
+        zoomLevel = Math.min(zoomLevel + 0.5, 4);
+        prensaZoomImg.style.transform = `scale(${zoomLevel})`;
     });
 
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
+    prensaZoomOut.addEventListener('click', () => {
+        zoomLevel = Math.max(zoomLevel - 0.5, 0.5);
+        prensaZoomImg.style.transform = `scale(${zoomLevel})`;
+    });
+
+    function closePrensaZoom() {
+        prensaZoom.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    prensaZoomClose.addEventListener('click', closePrensaZoom);
+    prensaZoom.addEventListener('click', (e) => {
+        if (e.target === prensaZoom || e.target.classList.contains('prensa-zoom-container')) {
+            closePrensaZoom();
         }
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('open')) {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
+        if (e.key === 'Escape' && prensaZoom.classList.contains('open')) {
+            closePrensaZoom();
+        }
+        if (prensaZoom.classList.contains('open')) {
+            if (e.key === '+' || e.key === '=') prensaZoomIn.click();
+            if (e.key === '-') prensaZoomOut.click();
         }
     });
 

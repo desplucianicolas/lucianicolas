@@ -95,7 +95,7 @@
             </div>
             <div class="bio-content">
                 <div class="bio-image">
-                    <img src="FOTOS/LUCIANICOLAS.BYN..JPG" alt="Lucía Nicolás">
+                    <img src="SESIÓN BENJA/EDITADAS/DSCF0782.jpg" alt="Lucía Nicolás">
                 </div>
                 <div class="bio-text">
                     <p data-es="Nació en la desconocida Murcia, donde jura haber bailado desde que tiene uso de razón. A los quince años se fue a Madrid persiguiendo su sueño de ser artista —sin mapa, sin red— dentro de conservatorios, absorbiendo de grandes maestros, rodeada de rigor y disciplina. Luego necesitó más." data-en="She was born in the lesser-known Murcia, where she swears she has danced since she can remember. At fifteen, she left for Madrid chasing her dream of being an artist —no map, no safety net— inside conservatories, absorbing from great masters, surrounded by rigor and discipline. Then she needed more.">Nació en la desconocida Murcia, donde jura haber bailado desde que tiene uso de razón. A los quince años se fue a Madrid persiguiendo su sueño de ser artista —sin mapa, sin red— dentro de conservatorios, absorbiendo de grandes maestros, rodeada de rigor y disciplina. Luego necesitó más.</p>
@@ -117,18 +117,42 @@
     <section id="prensa" class="section section-prensa">
         <div class="section-inner">
             <h2 data-es="Prensa" data-en="Press">Prensa</h2>
-            <div class="prensa-grid">
-                <div class="prensa-item"><img src="PRENSA/8m.png" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/Clases 1.png" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/clases 2.png" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/fotos flamencas.png" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/iberica.png" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/Iberica 1.jpg" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/Iberica 2.jpg" alt="Prensa"></div>
-                <div class="prensa-item"><img src="PRENSA/Iberica 3.jpg" alt="Prensa"></div>
+            <div class="prensa-carousel">
+                <button class="prensa-arrow prensa-prev" aria-label="Anterior">&#10094;</button>
+                <div class="prensa-viewport">
+                    <div class="prensa-track">
+                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.49.00.jpeg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.49.00 (1).jpeg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.49.01.jpeg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.50.56.jpeg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 09.30.44.jpeg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/8m.png" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/Clases 1.png" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/clases 2.png" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/fotos flamencas.png" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/iberica.png" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/Iberica 1.jpg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/Iberica 2.jpg" alt="Prensa"></div>
+                        <div class="prensa-slide"><img src="PRENSA/Iberica 3.jpg" alt="Prensa"></div>
+                    </div>
+                </div>
+                <button class="prensa-arrow prensa-next" aria-label="Siguiente">&#10095;</button>
             </div>
+            <div class="prensa-dots"></div>
         </div>
     </section>
+
+    <!-- Prensa Zoom Lightbox -->
+    <div id="prensa-zoom" class="prensa-zoom">
+        <div class="prensa-zoom-controls">
+            <button class="prensa-zoom-btn" id="prensa-zoom-in" aria-label="Zoom in">+</button>
+            <button class="prensa-zoom-btn" id="prensa-zoom-out" aria-label="Zoom out">−</button>
+            <button class="prensa-zoom-close" id="prensa-zoom-close" aria-label="Cerrar">✕</button>
+        </div>
+        <div class="prensa-zoom-container">
+            <img id="prensa-zoom-img" src="" alt="Prensa zoom">
+        </div>
+    </div>
 
     <!-- ESCENA -->
     <section id="escena" class="section section-creaciones">
@@ -144,6 +168,11 @@
         <div id="creaciones" class="section-inner escena-sub">
             <h3 class="escena-subtitle" data-es="Creaciones" data-en="Creations">Creaciones</h3>
             <div class="creaciones-grid">
+                <div class="creacion-card" data-piece="rhythm-entropy">
+                    <div class="card-img"><img src="SESIÓN BENJA/EDITADAS/DSCF0880.jpg" alt="Rhythm Entropy"></div>
+                    <h3>Rhythm Entropy</h3>
+                    <span class="card-tag" data-es="Dúo · Danza + Tecnología" data-en="Duo · Dance + Technology">Dúo · Danza + Tecnología</span>
+                </div>
                 <div class="creacion-card" data-piece="nina-fuego">
                     <div class="card-img"><img src="la niña de fuego/IMG_3466.JPG" alt="La niña de [fuego]"></div>
                     <h3>La niña de [fuego]</h3>
@@ -265,12 +294,6 @@
         </div>
     </section>
 
-    <!-- PRENSA LIGHTBOX -->
-    <div class="prensa-lightbox" id="prensa-lightbox">
-        <button class="prensa-lightbox-close" id="prensa-lightbox-close">&times;</button>
-        <img id="prensa-lightbox-img" src="" alt="Prensa">
-    </div>
-
     <!-- PIECE DETAIL MODAL -->
     <div class="piece-modal" id="piece-modal">
         <button class="piece-modal-close" id="modal-close">&times;</button>
@@ -278,6 +301,24 @@
     </div>
 
     <!-- PIECE DATA (hidden) -->
+    <template id="tmpl-rhythm-entropy">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="SESIÓN BENJA/EDITADAS/DSCF0880.jpg" alt="Rhythm Entropy">
+                <img src="SESIÓN BENJA/EDITADAS/DSCF0883.jpg" alt="Rhythm Entropy">
+                <img src="SESIÓN BENJA/EDITADAS/DSCF0885.jpg" alt="Rhythm Entropy">
+                <img src="SESIÓN BENJA/EDITADAS/DSCF0892.jpg" alt="Rhythm Entropy">
+            </div>
+            <div class="piece-info">
+                <h2>Rhythm Entropy</h2>
+                <p class="piece-subtitle" data-es="Dúo · Danza + Tecnología" data-en="Duo · Dance + Technology">Dúo · Danza + Tecnología</p>
+                <p class="piece-desc" data-es="Rhythm Entropy es un proyecto interdisciplinario que explora la interacción entre cuerpo, sonido y tecnología, desafiando los marcos tradicionales de la danza española y la composición rítmica. Desde una perspectiva contemporánea, investiga nuevas formas de expresión que emergen cuando la estructura del ritmo es sometida a procesos de fragmentación, digitalización y recomposición en tiempo real." data-en="Rhythm Entropy is an interdisciplinary project that explores the interaction between body, sound and technology, challenging the traditional frameworks of Spanish dance and rhythmic composition. From a contemporary perspective, it investigates new forms of expression that emerge when the structure of rhythm is subjected to processes of fragmentation, digitization and real-time recomposition.">Rhythm Entropy es un proyecto interdisciplinario que explora la interacción entre cuerpo, sonido y tecnología, desafiando los marcos tradicionales de la danza española y la composición rítmica. Desde una perspectiva contemporánea, investiga nuevas formas de expresión que emergen cuando la estructura del ritmo es sometida a procesos de fragmentación, digitalización y recomposición en tiempo real.</p>
+                <p class="piece-desc" data-es="Este trabajo nace de la necesidad de repensar las convenciones del flamenco y la danza española en diálogo con el contexto tecnológico y cultural actual. Nos situamos en un terreno de experimentación donde el zapateado, las castañuelas y otros elementos percusivos de la tradición no solo producen sonido físico, sino que, mediante el uso de herramientas digitales como Ableton Live y controladores MIDI, se transforman en generadores de nuevas arquitecturas sonoras. Cada golpe, cada movimiento, no sólo genera un eco acústico, sino también una señal digital que se procesa en vivo, creando capas de sonido, disonancias y texturas que evolucionan conforme la pieza se desarrolla." data-en="This work stems from the need to rethink the conventions of flamenco and Spanish dance in dialogue with the current technological and cultural context. We position ourselves in a terrain of experimentation where zapateado, castanets and other percussive elements of tradition not only produce physical sound, but through digital tools like Ableton Live and MIDI controllers, are transformed into generators of new sonic architectures. Each strike, each movement, not only generates an acoustic echo, but also a digital signal processed live, creating layers of sound, dissonances and textures that evolve as the piece unfolds.">Este trabajo nace de la necesidad de repensar las convenciones del flamenco y la danza española en diálogo con el contexto tecnológico y cultural actual. Nos situamos en un terreno de experimentación donde el zapateado, las castañuelas y otros elementos percusivos de la tradición no solo producen sonido físico, sino que, mediante el uso de herramientas digitales como Ableton Live y controladores MIDI, se transforman en generadores de nuevas arquitecturas sonoras. Cada golpe, cada movimiento, no sólo genera un eco acústico, sino también una señal digital que se procesa en vivo, creando capas de sonido, disonancias y texturas que evolucionan conforme la pieza se desarrolla.</p>
+                <p class="piece-credits" data-es="Dirección: Lucía Nicolás y Diego Gálvez · Coreografía: Lucía Nicolás · Espacio sonoro: Diego Gálvez (Not By Me) · Interpretación: Lucía Nicolás · Diseño de iluminación: Jesús Palazón" data-en="Direction: Lucía Nicolás & Diego Gálvez · Choreography: Lucía Nicolás · Sound design: Diego Gálvez (Not By Me) · Performance: Lucía Nicolás · Lighting design: Jesús Palazón">Dirección: Lucía Nicolás y Diego Gálvez · Coreografía: Lucía Nicolás · Espacio sonoro: Diego Gálvez (Not By Me) · Interpretación: Lucía Nicolás · Diseño de iluminación: Jesús Palazón</p>
+            </div>
+        </div>
+    </template>
+
     <template id="tmpl-nina-fuego">
         <div class="piece-detail">
             <div class="piece-gallery">

@@ -608,75 +608,183 @@ nav a:hover {
     gap: 2rem;
 }
 
-.prensa-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+/* Prensa Carousel */
+.prensa-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.prensa-item {
+.prensa-viewport {
     overflow: hidden;
-    border-radius: 0;
-    cursor: pointer;
+    flex: 1;
 }
 
-.prensa-item img {
+.prensa-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.prensa-slide {
+    min-width: 100%;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+.prensa-slide img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.4s ease, filter 0.4s ease;
     filter: grayscale(30%) sepia(15%) contrast(1.05);
+    transition: filter 0.4s ease;
 }
 
-.prensa-item:hover img {
-    transform: scale(1.03);
+.prensa-slide:hover img {
     filter: grayscale(10%) sepia(10%);
 }
 
-/* Prensa Lightbox */
-.prensa-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: rgba(0, 0, 0, 0.95);
+.prensa-arrow {
+    background: none;
+    border: 1px solid rgba(240, 235, 227, 0.3);
+    color: var(--color-cream);
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.prensa-arrow:hover {
+    border-color: var(--color-yellow);
+    color: var(--color-yellow);
+}
+
+.prensa-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.prensa-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(240, 235, 227, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.prensa-dot.active {
+    background: var(--color-yellow);
+}
+
+/* Prensa Zoom Lightbox */
+.prensa-zoom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    background: rgba(0, 0, 0, 0.96);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    cursor: zoom-out;
+    display: flex;
+    flex-direction: column;
 }
 
-.prensa-lightbox.open {
+.prensa-zoom.open {
     opacity: 1;
     pointer-events: all;
 }
 
-.prensa-lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    filter: none;
+.prensa-zoom-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem 1.5rem;
+    flex-shrink: 0;
+    z-index: 3001;
 }
 
-.prensa-lightbox-close {
-    position: fixed;
-    top: 1.5rem;
-    right: 2rem;
-    background: none;
-    border: none;
+.prensa-zoom-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(240, 235, 227, 0.5);
     color: var(--color-cream);
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
     cursor: pointer;
-    z-index: 2001;
-    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
     line-height: 1;
-    transition: color 0.3s;
+    font-weight: 300;
 }
 
-.prensa-lightbox-close:hover {
+.prensa-zoom-btn:hover {
+    background: rgba(212, 160, 23, 0.2);
+    border-color: var(--color-yellow);
     color: var(--color-yellow);
+}
+
+.prensa-zoom-close {
+    background: none;
+    border: 1px solid rgba(240, 235, 227, 0.5);
+    color: var(--color-cream);
+    font-size: 1.3rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prensa-zoom-close:hover {
+    border-color: var(--color-yellow);
+    color: var(--color-yellow);
+}
+
+.prensa-zoom-container {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    padding: 0.5rem 1rem 1.5rem;
+}
+
+.prensa-zoom-container:active {
+    cursor: grabbing;
+}
+
+#prensa-zoom-img {
+    display: block;
+    max-width: 92vw;
+    max-height: calc(100vh - 6rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+    transform-origin: center center;
+    filter: none !important;
 }
 
 .creacion-card {
@@ -1177,8 +1285,10 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .prensa-grid {
-        grid-template-columns: 1fr;
+    .prensa-arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
     }
 
     .nav-dropdown:hover .dropdown-menu {
