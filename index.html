@@ -15,8 +15,7 @@
     <section id="inicio" class="hero">
         <div class="hero-video-wrap">
             <video class="hero-video active" muted playsinline autoplay loop>
-                <source src="VIDEOS PARA INICIO/IMG_9343.PNG.mov" type="video/mp4">
-                <source src="VIDEOS PARA INICIO/IMG_9343.PNG.mov" type="video/quicktime">
+                <source src="VIDEOS PARA INICIO/Home MP4.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay"></div>
@@ -38,14 +37,14 @@
                 <ul id="nav-menu">
                     <li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
                     <li class="nav-dropdown">
-                        <a href="#bio" data-es="About" data-en="About">About</a>
+                        <a href="#bio" data-es="About" data-en="About">About<svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
                         <ul class="dropdown-menu">
                             <li><a href="#bio" data-es="Bio" data-en="Bio">Bio</a></li>
                             <li><a href="#prensa" data-es="Prensa" data-en="Press">Prensa</a></li>
                         </ul>
                     </li>
                     <li class="nav-dropdown">
-                        <a href="#escena" data-es="Escena" data-en="Stage">Escena</a>
+                        <a href="#escena" data-es="Escena" data-en="Stage">Escena<svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
                         <ul class="dropdown-menu">
                             <li><a href="#creaciones" data-es="Creaciones" data-en="Creations">Creaciones</a></li>
                             <li><a href="#colaboraciones" data-es="Colaboraciones" data-en="Collaborations">Colaboraciones</a></li>
@@ -53,10 +52,17 @@
                         </ul>
                     </li>
                     <li class="nav-dropdown">
-                        <a href="#investigacion" data-es="Escritos" data-en="Writings">Escritos</a>
+                        <a href="#investigacion" data-es="Escritos" data-en="Writings">Escritos<svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
                         <ul class="dropdown-menu">
                             <li><a href="#investigacion" data-es="Investigación" data-en="Research">Investigación</a></li>
                             <li><a href="#prosa" data-es="Prosa" data-en="Prose">Prosa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+<a href="#docencia" data-es="Docencia" data-en="Teaching">Docencia<svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#docencia-historico" data-es="Histórico" data-en="History">Histórico</a></li>
+                            <li><a href="#docencia-oferta" data-es="Oferta" data-en="Offer">Oferta</a></li>
                         </ul>
                     </li>
                     <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
@@ -116,42 +122,97 @@
     <section id="prensa" class="section section-prensa">
         <div class="section-inner">
             <h2 data-es="Prensa" data-en="Press">Prensa</h2>
-            <div class="prensa-carousel">
-                <button class="prensa-arrow prensa-prev" aria-label="Anterior">&#10094;</button>
-                <div class="prensa-viewport">
-                    <div class="prensa-track">
-                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.49.00.jpeg" alt="Prensa" class="prensa-rotated"></div>
-                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.49.00 (1).jpeg" alt="Prensa" class="prensa-rotated"></div>
-                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.49.01.jpeg" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 08.50.56.jpeg" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/WhatsApp Image 2026-04-08 at 09.30.44.jpeg" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/8m.png" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/Clases 1.png" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/clases 2.png" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/fotos flamencas.png" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/iberica.png" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/Iberica 1.jpg" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/Iberica 2.jpg" alt="Prensa"></div>
-                        <div class="prensa-slide"><img src="PRENSA/Iberica 3.jpg" alt="Prensa"></div>
+            <ol class="prensa-lista">
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">VSD México</span>
+                        <span class="prensa-fecha">Agosto 2025 · Págs. 29–31</span>
                     </div>
-                </div>
-                <button class="prensa-arrow prensa-next" aria-label="Siguiente">&#10095;</button>
-            </div>
-            <div class="prensa-dots"></div>
+                    <a href="PRENSA/VSD-Iberica agosto.pdf" class="prensa-titulo prensa-open" data-es="«Ibérica Conecta»" data-en="«Ibérica Conecta»">«Ibérica Conecta»</a>
+                    <p class="prensa-desc" data-es="Entrevista a Sandra Ostrowski, directora y coreógrafa de la Compañía Internacional Proart, sobre la colaboración artística con la bailaora española Mariana Collado en el marco del Festival Ibérica Contemporánea, edición 10." data-en="Interview with Sandra Ostrowski, director and choreographer of Compañía Internacional Proart, on the artistic collaboration with Spanish dancer Mariana Collado within the Festival Ibérica Contemporánea, 10th edition.">Entrevista a Sandra Ostrowski, directora y coreógrafa de la Compañía Internacional Proart, sobre la colaboración artística con la bailaora española Mariana Collado en el marco del Festival Ibérica Contemporánea, edición 10.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">VSD México</span>
+                        <span class="prensa-fecha">Junio 2025 · Págs. 118–119</span>
+                    </div>
+                    <a href="PRENSA/VSD-regresa iberica junio.pdf" class="prensa-titulo prensa-open" data-es="«Ibérica Conecta»" data-en="«Ibérica Conecta»">«Ibérica Conecta»</a>
+                    <p class="prensa-desc" data-es="Reportaje sobre la 10ª edición del Festival Ibérica Contemporánea celebrado en Querétaro, destacando el papel del Centro de Danza y Arte Proart como sede formativa y escénica del evento." data-en="Report on the 10th edition of the Festival Ibérica Contemporánea held in Querétaro, highlighting the role of Centro de Danza y Arte Proart as the event's training and performance venue.">Reportaje sobre la 10ª edición del Festival Ibérica Contemporánea celebrado en Querétaro, destacando el papel del Centro de Danza y Arte Proart como sede formativa y escénica del evento.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">VSD México</span>
+                        <span class="prensa-fecha">Marzo 2025 · Págs. 26–29</span>
+                    </div>
+                    <a href="PRENSA/VSD-2025_La danza como motor para la vida.pdf" class="prensa-titulo prensa-open" data-es="«La danza como motor para la vida»" data-en="«Dance as a motor for life»">«La danza como motor para la vida»</a>
+                    <p class="prensa-desc" data-es="Artículo sobre el Centro de Danza y Arte Proart y su misión de crear espacios seguros donde la danza beneficia tanto la mente como el cuerpo, con clases para todas las edades y niveles." data-en="Article on Centro de Danza y Arte Proart and its mission to create safe spaces where dance benefits both mind and body, with classes for all ages and levels.">Artículo sobre el Centro de Danza y Arte Proart y su misión de crear espacios seguros donde la danza beneficia tanto la mente como el cuerpo, con clases para todas las edades y niveles.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">VSD México</span>
+                        <span class="prensa-fecha">Febrero 2025 · Págs. 70–71</span>
+                    </div>
+                    <a href="PRENSA/VSD-l-FEBRERO-2025 En la inmensidad de tu voz.pdf" class="prensa-titulo prensa-open" data-es="«En la Inmensidad de tu Voz»" data-en="«In the Immensity of Your Voice»">«En la Inmensidad de tu Voz»</a>
+                    <p class="prensa-desc" data-es="Reportaje sobre la producción de la Compañía Internacional Proart para conmemorar el Día Internacional de la Mujer, presentada en el Foro Luis Covarrubias del Centro Proart." data-en="Report on the Compañía Internacional Proart production commemorating International Women's Day, presented at the Foro Luis Covarrubias of Centro Proart.">Reportaje sobre la producción de la Compañía Internacional Proart para conmemorar el Día Internacional de la Mujer, presentada en el Foro Luis Covarrubias del Centro Proart.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">Weekend by VSD · AM Querétaro</span>
+                        <span class="prensa-fecha">Diciembre 2021</span>
+                    </div>
+                    <a href="PRENSA/el apoyo total de proart.jpeg" class="prensa-titulo prensa-open" data-es="«El Apoyo Total de Proart»" data-en="«Proart's Total Support»">«El Apoyo Total de Proart»</a>
+                    <p class="prensa-desc" data-es="Cobertura del evento cultural organizado por Fundación Proart, destacando el respaldo de autoridades culturales del estado de Querétaro y el impacto social del proyecto artístico." data-en="Coverage of the cultural event organized by Fundación Proart, highlighting the support of Querétaro's cultural authorities and the social impact of the artistic project.">Cobertura del evento cultural organizado por Fundación Proart, destacando el respaldo de autoridades culturales del estado de Querétaro y el impacto social del proyecto artístico.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">Weekend by VSD · AM Querétaro</span>
+                        <span class="prensa-fecha">Diciembre 2021</span>
+                    </div>
+                    <a href="PRENSA/el apoyo total de proart 2.jpeg" class="prensa-titulo prensa-open" data-es="«Centro de Danza y Arte Proart»" data-en="«Centro de Danza y Arte Proart»">«Centro de Danza y Arte Proart»</a>
+                    <p class="prensa-desc" data-es="Nota social sobre la presentación del proyecto Proart, con la participación de personalidades de la cultura y la danza de Querétaro, resaltando su labor comunitaria y artística." data-en="Social note on the presentation of the Proart project, featuring cultural and dance personalities from Querétaro, highlighting its community and artistic work.">Nota social sobre la presentación del proyecto Proart, con la participación de personalidades de la cultura y la danza de Querétaro, resaltando su labor comunitaria y artística.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">SusyQ, Revista de Danza</span>
+                        <span class="prensa-fecha">Ed. Especial nº96 · Octubre 2025</span>
+                    </div>
+                    <a href="PRENSA/Susy Q 1.jpeg" class="prensa-titulo prensa-open" data-es="«Nuevo Flamenco»" data-en="«New Flamenco»">«Nuevo Flamenco»</a>
+                    <p class="prensa-desc" data-es="Publicación especial Dance from Spain de la revista española de referencia en danza, donde se menciona a Lucía Nicolás, directora, coreógrafa e intérprete de Marín y Cía, dentro del panorama del Nuevo Flamenco en España." data-en="Special Dance from Spain issue of the leading Spanish dance magazine, which names Lucía Nicolás — director, choreographer and performer of Marín y Cía — within the landscape of New Flamenco in Spain.">Publicación especial Dance from Spain de la revista española de referencia en danza, donde se menciona a Lucía Nicolás, directora, coreógrafa e intérprete de Marín y Cía, dentro del panorama del Nuevo Flamenco en España.</p>
+                    <div class="prensa-paginas">
+                        <a href="PRENSA/Susy Q 1.jpeg" class="prensa-open" data-es="Pág. 1" data-en="Pg. 1">Pág. 1</a>
+                        <a href="PRENSA/Susy Q 2.jpeg" class="prensa-open" data-es="Pág. 2" data-en="Pg. 2">Pág. 2</a>
+                        <a href="PRENSA/Susy Q 3..jpeg" class="prensa-open" data-es="Pág. 3" data-en="Pg. 3">Pág. 3</a>
+                    </div>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">La Opinión de Murcia</span>
+                        <span class="prensa-fecha"></span>
+                    </div>
+                    <a href="PRENSA/El villegas en danza.jpeg" class="prensa-titulo prensa-open" data-es="«El Villegas en Danza»" data-en="«El Villegas en Danza»">«El Villegas en Danza»</a>
+                    <p class="prensa-desc" data-es="Crítica de la V Gala de Bailarines Murcianos celebrada en el Teatro Víctor Villegas, donde se destaca la actuación de Lucía Nicolás junto a Francisco Espada como una de las más brillantes de la noche." data-en="Review of the 5th Gala of Murcian Dancers held at the Teatro Víctor Villegas, highlighting Lucía Nicolás's performance alongside Francisco Espada as one of the most brilliant of the night.">Crítica de la V Gala de Bailarines Murcianos celebrada en el Teatro Víctor Villegas, donde se destaca la actuación de Lucía Nicolás junto a Francisco Espada como una de las más brillantes de la noche.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion">La Opinión de Murcia</span>
+                        <span class="prensa-fecha"></span>
+                    </div>
+                    <a href="PRENSA/Premios tiempo de danza.jpeg" class="prensa-titulo prensa-open" data-es="«Rocío Molina y José Antonio García, Premios Tiempo de Danza»" data-en="«Rocío Molina and José Antonio García, Tiempo de Danza Awards»">«Rocío Molina y José Antonio García, Premios Tiempo de Danza»</a>
+                    <p class="prensa-desc" data-es="Reportaje sobre los premios Tiempo de Danza organizados por la Asociación Amigos de la Danza de Murcia, donde Lucía Nicolás obtuvo el primer premio en Danza Española por su interpretación de Sarasate." data-en="Report on the Tiempo de Danza awards organized by the Asociación Amigos de la Danza de Murcia, where Lucía Nicolás won first prize in Spanish Dance for her interpretation of Sarasate.">Reportaje sobre los premios Tiempo de Danza organizados por la Asociación Amigos de la Danza de Murcia, donde Lucía Nicolás obtuvo el primer premio en Danza Española por su interpretación de Sarasate.</p>
+                </li>
+
+            </ol>
         </div>
     </section>
-
-    <!-- Prensa Zoom Lightbox -->
-    <div id="prensa-zoom" class="prensa-zoom">
-        <div class="prensa-zoom-controls">
-            <button class="prensa-zoom-btn" id="prensa-zoom-in" aria-label="Zoom in">+</button>
-            <button class="prensa-zoom-btn" id="prensa-zoom-out" aria-label="Zoom out">−</button>
-            <button class="prensa-zoom-close" id="prensa-zoom-close" aria-label="Cerrar">✕</button>
-        </div>
-        <div class="prensa-zoom-container">
-            <img id="prensa-zoom-img" src="" alt="Prensa zoom">
-        </div>
-    </div>
 
     <!-- ESCENA -->
     <section id="escena" class="section section-creaciones">
@@ -683,21 +744,27 @@
     <section id="investigacion" class="section section-investigacion">
         <div class="section-inner">
             <h2 data-es="Investigación" data-en="Research">Investigación</h2>
-            <div class="investigacion-content">
-                <div class="investigacion-item">
-                    <h3 class="investigacion-title">El caos creativo</h3>
-                    <p class="investigacion-subtitle" data-es="Reflexiones sobre la creación coreográfica contemporánea en el flamenco · TFM · Máster en Flamencología · 2024" data-en="Reflections on contemporary choreographic creation in flamenco · Master's Thesis · MA in Flamencology · 2024">Reflexiones sobre la creación coreográfica contemporánea en el flamenco · TFM · Máster en Flamencología · 2024</p>
-                    <p data-es="El caos creativo. Reflexiones sobre la creación coreográfica contemporánea en el flamenco es el Trabajo de Fin de Máster de Lucía Nicolás, presentado en 2024 dentro del Máster de Flamencología. La investigación se adentra en los procesos de creación coreográfica del flamenco contemporáneo, explorando cómo los creadores y creadoras actuales construyen sus obras, qué metodologías siguen, qué les impulsa a crear y qué papel juega la figura del espectador en ese proceso."
-                       data-en="El caos creativo. Reflections on contemporary choreographic creation in flamenco is Lucía Nicolás's Master's Thesis, presented in 2024 as part of her MA in Flamencology. The research delves into the choreographic creation processes of contemporary flamenco, exploring how current creators build their works, what methodologies they follow, what drives them to create, and what role the spectator plays in that process.">
-                        El caos creativo. Reflexiones sobre la creación coreográfica contemporánea en el flamenco es el Trabajo de Fin de Máster de Lucía Nicolás, presentado en 2024 dentro del Máster de Flamencología. La investigación se adentra en los procesos de creación coreográfica del flamenco contemporáneo, explorando cómo los creadores y creadoras actuales construyen sus obras, qué metodologías siguen, qué les impulsa a crear y qué papel juega la figura del espectador en ese proceso.
-                    </p>
-                    <p data-es="A través de un recorrido por los antecedentes creativos del baile flamenco desde principios del siglo XX hasta la actualidad, y del acercamiento directo a artistas representativos del panorama actual, el trabajo busca dar visibilidad a unos métodos de creación que, a diferencia de lo que ocurre en la danza contemporánea o clásica, rara vez se documentan o se analizan en profundidad. El resultado es una reflexión que nace de la propia práctica como coreógrafa y de la búsqueda de nuevos lenguajes con los que seguir haciendo evolucionar el flamenco sin perder sus raíces."
-                       data-en="Through a journey across the creative antecedents of flamenco dance from the early 20th century to the present, and through direct engagement with representative artists of the current scene, the work seeks to give visibility to creation methods that, unlike what happens in contemporary or classical dance, are rarely documented or analyzed in depth. The result is a reflection born from her own practice as a choreographer and from the search for new languages with which to keep evolving flamenco without losing its roots.">
-                        A través de un recorrido por los antecedentes creativos del baile flamenco desde principios del siglo XX hasta la actualidad, y del acercamiento directo a artistas representativos del panorama actual, el trabajo busca dar visibilidad a unos métodos de creación que, a diferencia de lo que ocurre en la danza contemporánea o clásica, rara vez se documentan o se analizan en profundidad. El resultado es una reflexión que nace de la propia práctica como coreógrafa y de la búsqueda de nuevos lenguajes con los que seguir haciendo evolucionar el flamenco sin perder sus raíces.
-                    </p>
-                    <a href="https://drive.google.com/file/d/1KSd-gM9_maeZVHzswG0YBCNQK2TkVf8V/view?usp=sharing" target="_blank" rel="noopener" class="investigacion-link" data-es="Leer TFM completo" data-en="Read full thesis">Leer TFM completo</a>
-                </div>
-            </div>
+            <ol class="prensa-lista investigacion-lista">
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion" data-es="TFM · Máster en Flamencología" data-en="Master's Thesis · MA in Flamencology">TFM · Máster en Flamencología</span>
+                        <span class="prensa-fecha">2024</span>
+                    </div>
+                    <a href="Investigación/EL CAOS CREATIVO. TFM Lucía Nicolas.pdf" class="prensa-titulo prensa-open" data-es="«El caos creativo. Reflexiones sobre la creación coreográfica contemporánea en el flamenco»" data-en="«El caos creativo. Reflections on contemporary choreographic creation in flamenco»">«El caos creativo. Reflexiones sobre la creación coreográfica contemporánea en el flamenco»</a>
+                    <p class="prensa-desc" data-es="Trabajo de Fin de Máster presentado en 2024 dentro del Máster de Flamencología. La investigación se adentra en los procesos de creación coreográfica del flamenco contemporáneo, explorando cómo los creadores y creadoras actuales construyen sus obras, qué metodologías siguen, qué les impulsa a crear y qué papel juega la figura del espectador en ese proceso. A través de un recorrido por los antecedentes creativos del baile flamenco desde principios del siglo XX hasta la actualidad, y del acercamiento directo a artistas representativos del panorama actual, el trabajo busca dar visibilidad a unos métodos de creación que, a diferencia de lo que ocurre en la danza contemporánea o clásica, rara vez se documentan o se analizan en profundidad. El resultado es una reflexión que nace de la propia práctica como coreógrafa y de la búsqueda de nuevos lenguajes con los que seguir haciendo evolucionar el flamenco sin perder sus raíces." data-en="Master's Thesis presented in 2024 as part of an MA in Flamencology. The research delves into the choreographic creation processes of contemporary flamenco, exploring how current creators build their works, what methodologies they follow, what drives them to create, and what role the spectator plays in that process. Through a journey across the creative antecedents of flamenco dance from the early 20th century to the present, and through direct engagement with representative artists of the current scene, the work seeks to give visibility to creation methods that are rarely documented or analyzed in depth. The result is a reflection born from her own practice as a choreographer and from the search for new languages with which to keep evolving flamenco without losing its roots.">Trabajo de Fin de Máster presentado en 2024 dentro del Máster de Flamencología. La investigación se adentra en los procesos de creación coreográfica del flamenco contemporáneo, explorando cómo los creadores y creadoras actuales construyen sus obras, qué metodologías siguen, qué les impulsa a crear y qué papel juega la figura del espectador en ese proceso. A través de un recorrido por los antecedentes creativos del baile flamenco desde principios del siglo XX hasta la actualidad, y del acercamiento directo a artistas representativos del panorama actual, el trabajo busca dar visibilidad a unos métodos de creación que, a diferencia de lo que ocurre en la danza contemporánea o clásica, rara vez se documentan o se analizan en profundidad. El resultado es una reflexión que nace de la propia práctica como coreógrafa y de la búsqueda de nuevos lenguajes con los que seguir haciendo evolucionar el flamenco sin perder sus raíces.</p>
+                </li>
+
+                <li class="prensa-item-lista">
+                    <div class="prensa-meta">
+                        <span class="prensa-publicacion" data-es="Publicación EC20 · Estancias Coreográficas · Teatro Campoamor · Oviedo" data-en="Publication EC20 · Estancias Coreográficas · Teatro Campoamor · Oviedo">Publicación EC20 · Estancias Coreográficas · Teatro Campoamor · Oviedo</span>
+                        <span class="prensa-fecha">2020</span>
+                    </div>
+                    <a href="Investigación/Estancias coreograficas Yoshua Cienfuegos/1. PUBLICACION EC20.pdf" class="prensa-titulo prensa-open" data-es="«Investigamos dúo en Estancias Coreográficas 2020: 3 programaciones didácticas para la danza y 1 guía docente para artistas multidisciplinares»" data-en="«We Research Duo in Estancias Coreográficas 2020: 3 didactic programmes for dance and 1 teaching guide for multidisciplinary artists»">«Investigamos dúo en Estancias Coreográficas 2020: 3 programaciones didácticas para la danza y 1 guía docente para artistas multidisciplinares»</a>
+                    <p class="prensa-desc" data-es="Las Estancias Coreográficas son un proceso de investigación en danza que impulsa el encuentro interdisciplinar entre profesionales de las artes, financiado por el Teatro Campoamor y el Ayuntamiento de Oviedo. En su séptima edición, celebrada en 2020 y dedicada al estudio del dúo, Lucía Nicolás Marín participó como coreógrafa invitada junto a artistas como Yoshua Cienfuegos, Carmen Muñoz Jiménez o Javier García Ávila, entre otros. El proceso de investigación dio como resultado esta publicación colectiva que recoge tres programaciones didácticas —técnica de dúo contemporáneo, técnica de dúo flamenco y metodología coreográfica del dúo— además de una guía docente para artistas multidisciplinares enfocada en la investigación desde las artes plásticas. La aportación metodológica de Lucía Nicolás quedó recogida en la programación de técnica de dúo contemporáneo, donde sus reflexiones sobre la escucha activa y la puesta del cuerpo al servicio del mensaje fueron citadas como referencia central del diseño curricular. Una publicación que refleja el compromiso con la investigación aplicada a la danza como herramienta pedagógica y artística de alto nivel profesionalizador." data-en="Estancias Coreográficas is a dance research process that fosters interdisciplinary encounter among arts professionals, funded by the Teatro Campoamor and the Ayuntamiento de Oviedo. In its seventh edition, held in 2020 and dedicated to the study of duet, Lucía Nicolás Marín participated as a guest choreographer alongside artists such as Yoshua Cienfuegos, Carmen Muñoz Jiménez and Javier García Ávila, among others. The research process resulted in this collective publication gathering three didactic programmes — contemporary duet technique, flamenco duet technique and choreographic duet methodology — plus a teaching guide for multidisciplinary artists focused on research from the visual arts. Lucía Nicolás's methodological contribution was included in the contemporary duet technique programme, where her reflections on active listening and placing the body at the service of the message were cited as a central reference in the curricular design. A publication that reflects the commitment to applied dance research as a high-level pedagogical and artistic tool.">Las Estancias Coreográficas son un proceso de investigación en danza que impulsa el encuentro interdisciplinar entre profesionales de las artes, financiado por el Teatro Campoamor y el Ayuntamiento de Oviedo. En su séptima edición, celebrada en 2020 y dedicada al estudio del dúo, Lucía Nicolás Marín participó como coreógrafa invitada junto a artistas como Yoshua Cienfuegos, Carmen Muñoz Jiménez o Javier García Ávila, entre otros. El proceso de investigación dio como resultado esta publicación colectiva que recoge tres programaciones didácticas —técnica de dúo contemporáneo, técnica de dúo flamenco y metodología coreográfica del dúo— además de una guía docente para artistas multidisciplinares enfocada en la investigación desde las artes plásticas. La aportación metodológica de Lucía Nicolás quedó recogida en la programación de técnica de dúo contemporáneo, donde sus reflexiones sobre la escucha activa y la puesta del cuerpo al servicio del mensaje fueron citadas como referencia central del diseño curricular. Una publicación que refleja el compromiso con la investigación aplicada a la danza como herramienta pedagógica y artística de alto nivel profesionalizador.</p>
+                </li>
+
+            </ol>
         </div>
     </section>
 
@@ -727,6 +794,96 @@
     </section>
 
     <!-- CONTACTO -->
+    <!-- DOCENCIA -->
+    <section id="docencia" class="section section-docencia">
+        <div class="section-inner">
+            <h2 data-es="Docencia" data-en="Teaching">Docencia</h2>
+
+            <!-- HISTÓRICO -->
+            <div id="docencia-historico" class="docencia-bloque">
+                <h3 class="docencia-bloque-title" data-es="Histórico" data-en="History">Histórico</h3>
+                <ol class="prensa-lista docencia-lista">
+
+                    <li class="prensa-item-lista">
+                        <div class="prensa-meta">
+                            <span class="prensa-publicacion">Tecnológico de Monterrey, Campus Querétaro</span>
+                            <span class="prensa-fecha" data-es="En curso" data-en="Ongoing">En curso</span>
+                        </div>
+                        <p class="prensa-desc" data-es="Profesora de danza contemporánea y talleres de herramientas creativas para el movimiento." data-en="Lecturer in contemporary dance and creative movement tools workshops.">Profesora de danza contemporánea y talleres de herramientas creativas para el movimiento.</p>
+                    </li>
+
+                    <li class="prensa-item-lista">
+                        <div class="prensa-meta">
+                            <span class="prensa-publicacion">Festival Ibérica Contemporánea, Querétaro</span>
+                            <span class="prensa-fecha">2025</span>
+                        </div>
+                        <p class="prensa-desc" data-es="Clase magistral de Danza Estilizada y Masterclass pública en Palacio de Hierro, en el marco de la décima edición del festival." data-en="Masterclass in Stylized Dance and public Masterclass at Palacio de Hierro, within the tenth edition of the festival.">Clase magistral de Danza Estilizada y Masterclass pública en Palacio de Hierro, en el marco de la décima edición del festival.</p>
+                    </li>
+
+                    <li class="prensa-item-lista">
+                        <div class="prensa-meta">
+                            <span class="prensa-publicacion">Centro de Danza y Arte Proart, Querétaro</span>
+                            <span class="prensa-fecha">2021–2026</span>
+                        </div>
+                        <p class="prensa-desc" data-es="Docente de danza española, danza clásica y Cardiofolk (2021–2024) para diversos niveles y edades." data-en="Lecturer in Spanish dance, classical dance and Cardiofolk (2021–2024) for various levels and ages.">Docente de danza española, danza clásica y Cardiofolk (2021–2024) para diversos niveles y edades.</p>
+                    </li>
+
+                    <li class="prensa-item-lista">
+                        <div class="prensa-meta">
+                            <span class="prensa-publicacion" data-es="Talleres de danza inclusiva" data-en="Inclusive dance workshops">Talleres de danza inclusiva</span>
+                            <span class="prensa-fecha">2021–2026</span>
+                        </div>
+                        <p class="prensa-desc" data-es="Impartición de talleres de danza dirigidos a mujeres con diversidad funcional y a residentes de casas hogar, como herramienta de expresión, bienestar y desarrollo personal." data-en="Dance workshops for women with functional diversity and residents of care homes, as a tool for expression, wellbeing and personal development.">Impartición de talleres de danza dirigidos a mujeres con diversidad funcional y a residentes de casas hogar, como herramienta de expresión, bienestar y desarrollo personal.</p>
+                    </li>
+
+                    <li class="prensa-item-lista">
+                        <div class="prensa-meta">
+                            <span class="prensa-publicacion">Festival Encalé, Guadalajara</span>
+                            <span class="prensa-fecha">2023</span>
+                        </div>
+                        <p class="prensa-desc" data-es="Taller de técnica de flamenco en el marco de este festival internacional de danza." data-en="Flamenco technique workshop within this international dance festival.">Taller de técnica de flamenco en el marco de este festival internacional de danza.</p>
+                    </li>
+
+                    <li class="prensa-item-lista">
+                        <div class="prensa-meta">
+                            <span class="prensa-publicacion" data-es="Curso de Escuela Bolera Libre, Murcia" data-en="Free Escuela Bolera Course, Murcia">Curso de Escuela Bolera Libre, Murcia</span>
+                            <span class="prensa-fecha">2020</span>
+                        </div>
+                        <p class="prensa-desc" data-es="Curso de investigación y práctica en torno a la Escuela Bolera, explorando sus posibilidades expresivas a través de nuevos lenguajes y herramientas coreográficas contemporáneas." data-en="Research and practice course on Escuela Bolera, exploring its expressive possibilities through new languages and contemporary choreographic tools.">Curso de investigación y práctica en torno a la Escuela Bolera, explorando sus posibilidades expresivas a través de nuevos lenguajes y herramientas coreográficas contemporáneas.</p>
+                    </li>
+
+                </ol>
+            </div>
+
+            <!-- OFERTA -->
+            <div id="docencia-oferta" class="docencia-bloque">
+                <h3 class="docencia-bloque-title" data-es="Oferta" data-en="Offer">Oferta</h3>
+                <div class="creaciones-grid docencia-grid">
+
+                    <div class="creacion-card" data-piece="doc-herramientas">
+                        <div class="card-img"><img src="DOCENCIA/Herramientas para la creación en Danza española/PROART 2025-11.JPG" alt="Herramientas para la creación en Danza española"></div>
+                        <h3 data-es="Herramientas para la creación en Danza española" data-en="Creative Tools for Spanish Dance">Herramientas para la creación en Danza española</h3>
+                        <span class="card-tag" data-es="Taller · Creación coreográfica" data-en="Workshop · Choreographic creation">Taller · Creación coreográfica</span>
+                    </div>
+
+                    <div class="creacion-card" data-piece="doc-taller-coreografico">
+                        <div class="card-img"><img src="DOCENCIA/Taller coreográfico/WhatsApp Image 2025-10-21 at 19.32.49.jpeg" alt="Taller coreográfico"></div>
+                        <h3 data-es="Taller coreográfico" data-en="Choreographic Workshop">Taller coreográfico</h3>
+                        <span class="card-tag" data-es="Taller · Metodología coreográfica" data-en="Workshop · Choreographic methodology">Taller · Metodología coreográfica</span>
+                    </div>
+
+                    <div class="creacion-card" data-piece="doc-tecnica">
+                        <div class="card-img"><img src="DOCENCIA/Técnica de Danza española y Flamenco/Class-10.JPG" alt="Técnica de Danza española y Flamenco"></div>
+                        <h3 data-es="Técnica de Danza española y Flamenco" data-en="Spanish Dance & Flamenco Technique">Técnica de Danza española y Flamenco</h3>
+                        <span class="card-tag" data-es="Clase · Técnica · Todos los niveles" data-en="Class · Technique · All levels">Clase · Técnica · Todos los niveles</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="contacto" class="section section-contacto">
         <div class="section-inner">
             <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
@@ -745,6 +902,66 @@
             <p>&copy; 2026 Lucía Nicolás. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
         </footer>
     </section>
+
+    <!-- DOCENCIA TEMPLATES -->
+    <template id="tmpl-doc-herramientas">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="DOCENCIA/Herramientas para la creación en Danza española/PROART 2025-11.JPG" alt="Herramientas para la creación en Danza española">
+                <img src="DOCENCIA/Herramientas para la creación en Danza española/PROART 2025-13.JPG" alt="Herramientas para la creación en Danza española">
+                <img src="DOCENCIA/Herramientas para la creación en Danza española/Proart...2025-7.jpg" alt="Herramientas para la creación en Danza española">
+                <img src="DOCENCIA/Herramientas para la creación en Danza española/Proart...2025-8.jpg" alt="Herramientas para la creación en Danza española">
+            </div>
+            <div class="piece-info">
+                <h2 data-es="Herramientas para la creación en Danza española" data-en="Creative Tools for Spanish Dance">Herramientas para la creación en Danza española</h2>
+                <p class="piece-subtitle" data-es="Taller · Creación coreográfica" data-en="Workshop · Choreographic creation">Taller · Creación coreográfica</p>
+                <p class="piece-desc" data-es="Un taller dirigido a jóvenes creadores que quieran desarrollar su propio lenguaje dentro de la danza española y el flamenco. A través de los recursos y procesos que Lucía Nicolás utiliza como coreógrafa y creadora, se exploran metodologías de composición, investigación del movimiento y construcción de la identidad artística, abriendo nuevas posibilidades para quienes están comenzando su camino como creadores escénicos." data-en="A workshop for young creators who want to develop their own language within Spanish dance and flamenco. Through the tools and processes Lucía Nicolás uses as a choreographer and creator, the workshop explores composition methodologies, movement research and the construction of artistic identity, opening new possibilities for those beginning their path as stage creators.">Un taller dirigido a jóvenes creadores que quieran desarrollar su propio lenguaje dentro de la danza española y el flamenco. A través de los recursos y procesos que Lucía Nicolás utiliza como coreógrafa y creadora, se exploran metodologías de composición, investigación del movimiento y construcción de la identidad artística, abriendo nuevas posibilidades para quienes están comenzando su camino como creadores escénicos.</p>
+                <p class="piece-credits" data-es="Dirigido a: jóvenes creadores escénicos · Duración: adaptable · Idioma: español" data-en="For: young stage creators · Duration: adaptable · Language: Spanish">Dirigido a: jóvenes creadores escénicos · Duración: adaptable · Idioma: español</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-doc-taller-coreografico">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="DOCENCIA/Taller coreográfico/WhatsApp Image 2025-10-21 at 19.32.49.jpeg" alt="Taller coreográfico">
+                <img src="DOCENCIA/Taller coreográfico/WhatsApp Image 2025-10-21 at 19.33.34.jpeg" alt="Taller coreográfico">
+            </div>
+            <div class="piece-info">
+                <h2 data-es="Taller coreográfico" data-en="Choreographic Workshop">Taller coreográfico</h2>
+                <p class="piece-subtitle" data-es="Taller · Metodología coreográfica" data-en="Workshop · Choreographic methodology">Taller · Metodología coreográfica</p>
+                <p class="piece-desc" data-es="Un espacio de creación donde montamos material coreográfico original basado en el estilo personal de Lucía Nicolás, en el cruce entre la danza española, el flamenco y la danza contemporánea. Un taller pensado para bailarines que quieran vivir el proceso creativo desde dentro, habitando una propuesta con identidad propia y trabajando la interpretación como parte esencial del movimiento." data-en="A creation space where we build original choreographic material based on Lucía Nicolás's personal style, at the crossroads of Spanish dance, flamenco and contemporary dance. A workshop designed for dancers who want to live the creative process from within, inhabiting a proposal with its own identity and working on interpretation as an essential part of movement.">Un espacio de creación donde montamos material coreográfico original basado en el estilo personal de Lucía Nicolás, en el cruce entre la danza española, el flamenco y la danza contemporánea. Un taller pensado para bailarines que quieran vivir el proceso creativo desde dentro, habitando una propuesta con identidad propia y trabajando la interpretación como parte esencial del movimiento.</p>
+                <p class="piece-credits" data-es="Dirigido a: bailarines con base técnica · Duración: adaptable · Idioma: español / inglés" data-en="For: dancers with technical background · Duration: adaptable · Language: Spanish / English">Dirigido a: bailarines con base técnica · Duración: adaptable · Idioma: español / inglés</p>
+            </div>
+        </div>
+    </template>
+
+    <template id="tmpl-doc-tecnica">
+        <div class="piece-detail">
+            <div class="piece-gallery">
+                <img src="DOCENCIA/Técnica de Danza española y Flamenco/Class-10.JPG" alt="Técnica de Danza española y Flamenco">
+                <img src="DOCENCIA/Técnica de Danza española y Flamenco/class-10(1).JPG" alt="Técnica de Danza española y Flamenco">
+                <img src="DOCENCIA/Técnica de Danza española y Flamenco/class-11.JPG" alt="Técnica de Danza española y Flamenco">
+            </div>
+            <div class="piece-info">
+                <h2 data-es="Técnica de Danza española y Flamenco" data-en="Spanish Dance & Flamenco Technique">Técnica de Danza española y Flamenco</h2>
+                <p class="piece-subtitle" data-es="Clase · Técnica · Todos los niveles" data-en="Class · Technique · All levels">Clase · Técnica · Todos los niveles</p>
+                <p class="piece-desc" data-es="Un recorrido técnico por las cuatro formas de la danza española —escuela bolera, folclore, flamenco y danza estilizada— con el objetivo de ampliar el vocabulario dancístico y profundizar en los recursos interpretativos propios de cada estilo. Un taller riguroso y accesible, orientado tanto a la formación técnica como a la comprensión expresiva del movimiento." data-en="A technical journey through the four forms of Spanish dance — escuela bolera, folklore, flamenco and stylized dance — with the aim of expanding dance vocabulary and deepening the interpretive resources of each style. A rigorous and accessible workshop, oriented towards both technical training and expressive understanding of movement.">Un recorrido técnico por las cuatro formas de la danza española —escuela bolera, folclore, flamenco y danza estilizada— con el objetivo de ampliar el vocabulario dancístico y profundizar en los recursos interpretativos propios de cada estilo. Un taller riguroso y accesible, orientado tanto a la formación técnica como a la comprensión expresiva del movimiento.</p>
+                <p class="piece-credits" data-es="Dirigido a: intérpretes de todos los niveles · Duración: adaptable · Idioma: español / inglés" data-en="For: performers of all levels · Duration: adaptable · Language: Spanish / English">Dirigido a: intérpretes de todos los niveles · Duración: adaptable · Idioma: español / inglés</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- Prensa Viewer Overlay -->
+    <div id="prensa-viewer" class="prensa-viewer" aria-hidden="true">
+        <button class="prensa-viewer-back" id="prensa-viewer-back" aria-label="Volver">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span data-es="Volver" data-en="Back">Volver</span>
+        </button>
+        <div class="prensa-viewer-content" id="prensa-viewer-content"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>

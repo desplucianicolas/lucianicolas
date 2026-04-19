@@ -147,6 +147,11 @@ nav a:hover {
     color: var(--color-yellow);
 }
 
+/* Chevron oculto en desktop */
+.nav-chevron {
+    display: none;
+}
+
 /* Nav Dropdown */
 .nav-dropdown {
     position: relative;
@@ -628,191 +633,165 @@ nav a:hover {
     gap: 2rem;
 }
 
-/* Prensa Carousel */
-.prensa-carousel {
-    position: relative;
+/* ─── Prensa Lista ──────────────────── */
+
+.prensa-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prensa-item-lista {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid rgba(240, 235, 227, 0.12);
+}
+
+.prensa-item-lista:last-child {
+    border-bottom: none;
+}
+
+.prensa-meta {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.prensa-viewport {
-    overflow: hidden;
-    flex: 1;
-}
-
-.prensa-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.prensa-slide {
-    min-width: 100%;
-    cursor: pointer;
-    padding: 0 0.5rem;
-    box-sizing: border-box;
-}
-
-.prensa-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(30%) sepia(15%) contrast(1.05);
-    transition: filter 0.4s ease;
-}
-
-.prensa-slide:hover img {
-    filter: grayscale(10%) sepia(10%);
-}
-
-.prensa-slide img.prensa-rotated {
-    transform: rotate(-90deg);
-    max-height: 70vw;
-    width: auto;
-    margin: auto;
-}
-
-.prensa-arrow {
-    background: none;
-    border: 1px solid rgba(240, 235, 227, 0.3);
-    color: var(--color-cream);
-    font-size: 1.5rem;
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.prensa-arrow:hover {
-    border-color: var(--color-yellow);
+.prensa-publicacion {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: var(--color-yellow);
 }
 
-.prensa-dots {
+.prensa-fecha {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: rgba(240, 235, 227, 0.45);
+}
+
+.prensa-titulo {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-cream);
+    text-decoration: none;
+    margin-bottom: 0.6rem;
+    transition: color 0.2s;
+    line-height: 1.3;
+}
+
+.prensa-titulo:hover {
+    color: var(--color-yellow);
+}
+
+.prensa-desc {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(240, 235, 227, 0.65);
+    max-width: 70ch;
+    margin: 0;
+}
+
+.prensa-paginas {
     display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
+    gap: 1rem;
+    margin-top: 0.6rem;
 }
 
-.prensa-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(240, 235, 227, 0.3);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.3s;
+.prensa-paginas a {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(240, 235, 227, 0.5);
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-.prensa-dot.active {
-    background: var(--color-yellow);
+.prensa-paginas a:hover {
+    color: var(--color-yellow);
 }
 
-/* Prensa Zoom Lightbox */
-.prensa-zoom {
+/* ─── Prensa Viewer Overlay ─────────── */
+
+.prensa-viewer {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     z-index: 3000;
-    background: rgba(0, 0, 0, 0.96);
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    display: flex;
-    flex-direction: column;
 }
 
-.prensa-zoom.open {
+.prensa-viewer.open {
     opacity: 1;
     pointer-events: all;
 }
 
-.prensa-zoom-controls {
+.prensa-viewer-back {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.5rem;
     display: flex;
-    gap: 0.75rem;
     align-items: center;
-    justify-content: flex-end;
-    padding: 1rem 1.5rem;
-    flex-shrink: 0;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(240, 235, 227, 0.25);
+    transition: all 0.25s;
     z-index: 3001;
 }
 
-.prensa-zoom-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(240, 235, 227, 0.5);
-    color: var(--color-cream);
-    font-size: 1.5rem;
-    width: 2.8rem;
-    height: 2.8rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    line-height: 1;
-    font-weight: 300;
-}
-
-.prensa-zoom-btn:hover {
-    background: rgba(212, 160, 23, 0.2);
+.prensa-viewer-back:hover {
     border-color: var(--color-yellow);
     color: var(--color-yellow);
 }
 
-.prensa-zoom-close {
-    background: none;
-    border: 1px solid rgba(240, 235, 227, 0.5);
-    color: var(--color-cream);
-    font-size: 1.3rem;
-    width: 2.8rem;
-    height: 2.8rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.prensa-zoom-close:hover {
-    border-color: var(--color-yellow);
-    color: var(--color-yellow);
-}
-
-.prensa-zoom-container {
+.prensa-viewer-content {
     flex: 1;
-    overflow: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: grab;
-    padding: 0.5rem 1rem 1.5rem;
+    padding: 4rem 1rem 1rem;
+    overflow: auto;
 }
 
-.prensa-zoom-container:active {
-    cursor: grabbing;
-}
-
-#prensa-zoom-img {
+.prensa-viewer-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
     display: block;
-    max-width: 92vw;
-    max-height: calc(100vh - 6rem);
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.25s ease;
-    transform-origin: center center;
-    filter: none !important;
 }
+
+.prensa-viewer-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ─── Creaciones Grid ─────────────── */
 
 .creacion-card {
     position: relative;
@@ -1050,59 +1029,38 @@ nav a:hover {
     background-color: var(--color-bg);
 }
 
-.investigacion-content p {
+.investigacion-lista .prensa-titulo {
+    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+}
+
+/* ─── DOCENCIA ───────────────────────── */
+
+.section-docencia {
+    background-color: var(--color-bg);
+}
+
+.docencia-bloque {
+    margin-bottom: 3.5rem;
+}
+
+.docencia-bloque-title {
     font-family: var(--font-body);
-    font-size: 1.1rem;
-    font-weight: 200;
-    line-height: 2;
-    color: var(--color-text-dim);
-    max-width: 700px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240, 235, 227, 0.35);
     margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(240, 235, 227, 0.08);
 }
 
-.investigacion-item {
-    margin-bottom: 3rem;
+.docencia-lista .prensa-item-lista {
+    padding: 1.4rem 0;
 }
 
-.investigacion-title {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: var(--color-cream);
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.investigacion-subtitle {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--color-yellow);
-    margin-bottom: 2rem;
-    max-width: 700px;
-}
-
-.investigacion-link {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-cream);
-    border: 2px solid rgba(212, 160, 23, 0.4);
-    padding: 0.7rem 1.5rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-}
-
-.investigacion-link:hover {
-    background: var(--color-yellow);
-    border-color: var(--color-yellow);
-    color: #000;
+.docencia-grid {
+    margin-top: 1rem;
 }
 
 /* ─── PROSA ──────────────────────────── */
@@ -1264,31 +1222,138 @@ footer p {
         display: flex;
     }
 
+    /* Panel lateral derecho */
     nav ul {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 100%;
+        right: -110%;
+        width: min(320px, 85vw);
         height: 100vh;
-        background: var(--color-bg);
+        background: rgba(8, 8, 8, 0.98);
+        backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(212, 160, 23, 0.15);
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        gap: 2.5rem;
-        transition: right 0.4s ease;
+        gap: 0;
+        padding: 5rem 2.5rem 3rem;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
     }
 
     nav ul.open {
         right: 0;
     }
 
-    nav a {
-        font-size: 1.1rem;
-        letter-spacing: 0.25em;
+    /* Overlay oscuro al abrir */
+    nav ul.open::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        right: min(320px, 85vw);
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    nav ul > li {
+        width: 100%;
+        border-bottom: 1px solid rgba(240, 235, 227, 0.06);
+    }
+
+    nav ul > li:last-child {
+        border-bottom: none;
+    }
+
+    /* Links principales */
+    nav ul > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        padding: 1rem 0;
+        color: var(--color-cream);
+    }
+
+    nav ul > li > a::after {
+        display: none; /* quitar subrayado animado en móvil */
+    }
+
+    /* Chevron para items con sub-menú */
+    .nav-dropdown > a .nav-chevron {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
+        opacity: 0.5;
+        flex-shrink: 0;
+    }
+
+    .nav-dropdown.expanded > a .nav-chevron {
+        transform: rotate(90deg);
+        opacity: 1;
+    }
+
+    /* Desactivar hover dropdown en móvil */
+    .nav-dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    /* Dropdown como acordeón */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        background: none;
+        border: none;
+        border-left: 1px solid rgba(212, 160, 23, 0.25);
+        backdrop-filter: none;
+        padding: 0 0 0.8rem 1.2rem;
+        min-width: auto;
+        margin-top: 0;
+        gap: 0;
+        align-items: flex-start;
+        display: none;
+    }
+
+    .nav-dropdown.expanded .dropdown-menu {
+        display: flex;
+    }
+
+    .dropdown-menu li {
+        width: 100%;
+    }
+
+    .dropdown-menu a {
+        padding: 0.55rem 0;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        color: rgba(240, 235, 227, 0.6);
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:active {
+        color: var(--color-yellow);
+        background: none;
     }
 
     .lang-switch {
         margin-left: 0;
+        margin-top: 2rem;
+        width: 100%;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(240, 235, 227, 0.08);
+    }
+
+    .creaciones-hero-text {
+        left: 1.5rem;
+        bottom: 2rem;
+    }
+
+    .section-creaciones .section-inner {
+        padding: 3rem 1.5rem;
     }
 
     .bio-content {
@@ -1297,7 +1362,8 @@ footer p {
     }
 
     .bio-image img {
-        height: 350px;
+        height: 380px;
+        object-position: center top;
     }
 
     .prosa-layout {
@@ -1312,41 +1378,12 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .prensa-arrow {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1.2rem;
+    .card-img {
+        aspect-ratio: 4 / 5;
     }
 
-    .nav-dropdown:hover .dropdown-menu {
-        display: flex;
-    }
-
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        background: none;
-        border: none;
-        backdrop-filter: none;
-        padding: 0.5rem 0 0 0;
-        min-width: auto;
-        margin-top: 0;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .dropdown-menu a {
-        padding: 0.3rem 0;
-        font-size: 0.85rem;
-    }
-
-    .creaciones-hero-text {
-        left: 1.5rem;
-        bottom: 2rem;
-    }
-
-    .section-creaciones .section-inner {
-        padding: 3rem 1.5rem;
+    .creacion-card h3 {
+        font-size: 1.1rem;
     }
 
     .piece-detail {

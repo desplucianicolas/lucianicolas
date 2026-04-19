@@ -34,27 +34,52 @@
         navMenu.classList.toggle('open');
     });
 
-    // Close menu on link click
-    navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('open');
+    // ─── Mobile accordion dropdowns ──────
+    const isMobile = () => window.innerWidth <= 768;
+
+    navMenu.querySelectorAll('.nav-dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (!isMobile()) return;
+            const parent = link.parentElement;
+            const isExpanded = parent.classList.contains('expanded');
+            // Cierra todos los demás
+            navMenu.querySelectorAll('.nav-dropdown.expanded').forEach(el => {
+                if (el !== parent) el.classList.remove('expanded');
+            });
+            parent.classList.toggle('expanded', !isExpanded);
+            // Solo navega si ya estaba expandido (segundo tap)
+            if (!isExpanded) e.preventDefault();
         });
     });
 
-    // ─── Scroll Fade-in ─────────────────
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // Cierra el menú al hacer clic en un sub-item o en links sin dropdown
+    navMenu.querySelectorAll('.dropdown-menu a, li:not(.nav-dropdown) > a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('open');
+            navMenu.querySelectorAll('.nav-dropdown').forEach(el => el.classList.remove('expanded'));
+        });
+    });
 
+    // Cierra al clicar fuera del panel
+    document.addEventListener('click', (e) => {
+        if (isMobile() && navMenu.classList.contains('open') &&
+            !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('open');
+            navMenu.querySelectorAll('.nav-dropdown').forEach(el => el.classList.remove('expanded'));
+        }
+    });
+
+    // ─── Scroll Fade-in ─────────────────
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.02, rootMargin: '0px 0px -30px 0px' });
 
     // Apply fade-in to section content
     document.querySelectorAll('.section-inner, .hero-content').forEach(el => {
@@ -129,89 +154,48 @@
         }
     });
 
-    // ─── Prensa Carousel ─────────────────
-    const prensaTrack = document.querySelector('.prensa-track');
-    const prensaSlides = document.querySelectorAll('.prensa-slide');
-    const prensaPrev = document.querySelector('.prensa-prev');
-    const prensaNext = document.querySelector('.prensa-next');
-    const prensaDotsContainer = document.querySelector('.prensa-dots');
-    let prensaIndex = 0;
+    // ─── Prensa Viewer ───────────────────
+    const prensaViewer = document.getElementById('prensa-viewer');
+    const prensaViewerContent = document.getElementById('prensa-viewer-content');
+    const prensaViewerBack = document.getElementById('prensa-viewer-back');
 
-    // Create dots
-    prensaSlides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.classList.add('prensa-dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        prensaDotsContainer.appendChild(dot);
-    });
-
-    function goToSlide(index) {
-        prensaIndex = index;
-        prensaTrack.style.transform = `translateX(-${prensaIndex * 100}%)`;
-        document.querySelectorAll('.prensa-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === prensaIndex);
-        });
-    }
-
-    prensaPrev.addEventListener('click', () => {
-        goToSlide(prensaIndex > 0 ? prensaIndex - 1 : prensaSlides.length - 1);
-    });
-
-    prensaNext.addEventListener('click', () => {
-        goToSlide(prensaIndex < prensaSlides.length - 1 ? prensaIndex + 1 : 0);
-    });
-
-    // ─── Prensa Zoom ─────────────────
-    const prensaZoom = document.getElementById('prensa-zoom');
-    const prensaZoomImg = document.getElementById('prensa-zoom-img');
-    const prensaZoomIn = document.getElementById('prensa-zoom-in');
-    const prensaZoomOut = document.getElementById('prensa-zoom-out');
-    const prensaZoomClose = document.getElementById('prensa-zoom-close');
-    let zoomLevel = 1;
-
-    prensaSlides.forEach(slide => {
-        slide.addEventListener('click', () => {
-            const img = slide.querySelector('img');
-            if (img) {
-                prensaZoomImg.src = img.src;
-                zoomLevel = 1;
-                prensaZoomImg.style.transform = `scale(${zoomLevel})`;
-                prensaZoom.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-
-    prensaZoomIn.addEventListener('click', () => {
-        zoomLevel = Math.min(zoomLevel + 0.5, 4);
-        prensaZoomImg.style.transform = `scale(${zoomLevel})`;
-    });
-
-    prensaZoomOut.addEventListener('click', () => {
-        zoomLevel = Math.max(zoomLevel - 0.5, 0.5);
-        prensaZoomImg.style.transform = `scale(${zoomLevel})`;
-    });
-
-    function closePrensaZoom() {
-        prensaZoom.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    prensaZoomClose.addEventListener('click', closePrensaZoom);
-    prensaZoom.addEventListener('click', (e) => {
-        if (e.target === prensaZoom || e.target.classList.contains('prensa-zoom-container')) {
-            closePrensaZoom();
+    function openPrensaViewer(href) {
+        prensaViewerContent.innerHTML = '';
+        const isPDF = href.toLowerCase().endsWith('.pdf');
+        if (isPDF) {
+            const iframe = document.createElement('iframe');
+            iframe.src = href;
+            prensaViewerContent.appendChild(iframe);
+        } else {
+            const img = document.createElement('img');
+            img.src = href;
+            img.alt = 'Prensa';
+            prensaViewerContent.appendChild(img);
         }
+        prensaViewer.classList.add('open');
+        prensaViewer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePrensaViewer() {
+        prensaViewer.classList.remove('open');
+        prensaViewer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => { prensaViewerContent.innerHTML = ''; }, 300);
+    }
+
+    document.querySelectorAll('.prensa-open').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            openPrensaViewer(link.getAttribute('href'));
+        });
     });
+
+    prensaViewerBack.addEventListener('click', closePrensaViewer);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && prensaZoom.classList.contains('open')) {
-            closePrensaZoom();
-        }
-        if (prensaZoom.classList.contains('open')) {
-            if (e.key === '+' || e.key === '=') prensaZoomIn.click();
-            if (e.key === '-') prensaZoomOut.click();
+        if (e.key === 'Escape' && prensaViewer.classList.contains('open')) {
+            closePrensaViewer();
         }
     });
 
