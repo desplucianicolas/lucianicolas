@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <!-- Background -->
+  <rect width="640" height="640" fill="#0a0a0a"/>
+
+  <!-- Inner border rectangle -->
+  <rect x="58" y="58" width="524" height="524" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+
+  <!-- Corner bracket — top-left -->
+  <polyline points="28,92 28,28 92,28" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="square"/>
+  <!-- Corner bracket — top-right -->
+  <polyline points="548,28 612,28 612,92" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="square"/>
+  <!-- Corner bracket — bottom-left -->
+  <polyline points="28,548 28,612 92,612" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="square"/>
+  <!-- Corner bracket — bottom-right -->
+  <polyline points="548,612 612,612 612,548" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="square"/>
+
+  <!-- LN monogram -->
+  <text
+    x="320" y="400"
+    text-anchor="middle"
+    font-family="'Georgia', 'Times New Roman', serif"
+    font-size="256"
+    font-weight="700"
+    fill="#f0e6d3"
+    letter-spacing="-6">LN</text>
+
+  <!-- Gold dot -->
+  <rect x="308" y="432" width="24" height="24" fill="#c9a84c"/>
+
+  <!-- Name -->
+  <text
+    x="320" y="516"
+    text-anchor="middle"
+    font-family="'Arial', 'Helvetica', sans-serif"
+    font-size="21"
+    font-weight="400"
+    fill="#c9a84c"
+    letter-spacing="9">LUCÍA NICOLÁS</text>
+</svg>
