@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-  <!-- Background -->
-  <rect width="640" height="640" fill="#0a0a0a"/>
+  <!-- Background transparent -->
+  <rect width="640" height="640" fill="transparent"/>
 
   <!-- Inner border rectangle -->
   <rect x="58" y="58" width="524" height="524" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
