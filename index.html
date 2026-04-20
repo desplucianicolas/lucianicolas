@@ -351,23 +351,23 @@
 
             <h4 class="tablao-sub" data-es="Ecos Flamencos | Abril | 2024" data-en="Ecos Flamencos | April | 2024">Ecos Flamencos | Abril | 2024</h4>
             <div class="prensa-grid">
-                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49.jpeg" alt="Tablao 1"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49 (1).jpeg" alt="Tablao 1"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49 (2).jpeg" alt="Tablao 1"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.50.jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item" data-gallery="tablao1" data-index="0"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49.jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item" data-gallery="tablao1" data-index="1"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49 (1).jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item" data-gallery="tablao1" data-index="2"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.49 (2).jpeg" alt="Tablao 1"></div>
+                <div class="prensa-item" data-gallery="tablao1" data-index="3"><img src="tablao/TABLAO 1/WhatsApp Image 2026-04-06 at 17.02.50.jpeg" alt="Tablao 1"></div>
             </div>
             <div class="tablao-links">
-                <a href="https://www.instagram.com/reels/C5yr-SIgpOs/" target="_blank" class="piece-link piece-link-teaser" data-es="Ver en Instagram" data-en="Watch on Instagram">Ver en Instagram</a>
+                <a href="https://www.instagram.com/reel/C5yr-SIgpOs/?igsh=anIyaWI3aTV6bmI3" target="_blank" class="piece-link piece-link-teaser" data-es="Ver en Instagram" data-en="Watch on Instagram">Ver en Instagram</a>
             </div>
 
             <h4 class="tablao-sub" data-es="Ecos Flamencos | Noviembre | 2024" data-en="Ecos Flamencos | November | 2024">Ecos Flamencos | Noviembre | 2024</h4>
             <div class="prensa-grid">
-                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-049.jpg" alt="Tablao 2"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-053.jpg" alt="Tablao 2"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-054.jpg" alt="Tablao 2"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-059.jpg" alt="Tablao 2"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-064.jpg" alt="Tablao 2"></div>
-                <div class="prensa-item"><img src="tablao/TABLAO 2/PROART-105.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item" data-gallery="tablao2" data-index="0"><img src="tablao/TABLAO 2/PROART-049.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item" data-gallery="tablao2" data-index="1"><img src="tablao/TABLAO 2/PROART-053.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item" data-gallery="tablao2" data-index="2"><img src="tablao/TABLAO 2/PROART-054.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item" data-gallery="tablao2" data-index="3"><img src="tablao/TABLAO 2/PROART-059.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item" data-gallery="tablao2" data-index="4"><img src="tablao/TABLAO 2/PROART-064.jpg" alt="Tablao 2"></div>
+                <div class="prensa-item" data-gallery="tablao2" data-index="5"><img src="tablao/TABLAO 2/PROART-105.jpg" alt="Tablao 2"></div>
             </div>
         </div>
     </section>
@@ -974,6 +974,17 @@
             <span data-es="Volver" data-en="Back">Volver</span>
         </button>
         <div class="prensa-viewer-content" id="prensa-viewer-content"></div>
+    </div>
+
+    <!-- PHOTO LIGHTBOX -->
+    <div id="photo-lightbox" class="photo-lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev">&#8592;</button>
+        <button class="lightbox-next" id="lightbox-next">&#8594;</button>
+        <div class="lightbox-img-wrap">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
 
     <script src="script.js"></script>

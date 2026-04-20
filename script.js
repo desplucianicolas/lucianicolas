@@ -162,14 +162,6 @@
     function openPrensaViewer(href) {
         prensaViewerContent.innerHTML = '';
         const isPDF = href.toLowerCase().endsWith('.pdf');
-        const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        if (isPDF && isMobileDevice) {
-            // iOS/Android: iframes de PDF no son scrolleables → abrir en nueva pestaña
-            window.open(href, '_blank');
-            return;
-        }
-
         if (isPDF) {
             const iframe = document.createElement('iframe');
             iframe.src = href;
@@ -182,13 +174,12 @@
         }
         prensaViewer.classList.add('open');
         prensaViewer.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        prensaViewer.scrollTop = 0;
     }
 
     function closePrensaViewer() {
         prensaViewer.classList.remove('open');
         prensaViewer.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
         setTimeout(() => { prensaViewerContent.innerHTML = ''; }, 300);
     }
 
@@ -205,6 +196,58 @@
         if (e.key === 'Escape' && prensaViewer.classList.contains('open')) {
             closePrensaViewer();
         }
+    });
+
+    // ─── Photo Lightbox (Tablao) ─────────
+    const lightbox = document.getElementById('photo-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    let lbImages = [];
+    let lbIndex = 0;
+
+    function openLightbox(images, index) {
+        lbImages = images;
+        lbIndex = index;
+        showLightboxSlide();
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function showLightboxSlide() {
+        lightboxImg.src = lbImages[lbIndex];
+        lightboxCounter.textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+        lightboxPrev.style.visibility = lbImages.length > 1 ? 'visible' : 'hidden';
+        lightboxNext.style.visibility = lbImages.length > 1 ? 'visible' : 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    lightboxPrev.addEventListener('click', () => { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; showLightboxSlide(); });
+    lightboxNext.addEventListener('click', () => { lbIndex = (lbIndex + 1) % lbImages.length; showLightboxSlide(); });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft')  { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; showLightboxSlide(); }
+        if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbImages.length; showLightboxSlide(); }
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    document.querySelectorAll('.prensa-item[data-gallery]').forEach(item => {
+        item.addEventListener('click', () => {
+            const galleryId = item.dataset.gallery;
+            const index = parseInt(item.dataset.index);
+            const imgs = [...document.querySelectorAll(`.prensa-item[data-gallery="${galleryId}"]`)]
+                .map(el => el.querySelector('img').src);
+            openLightbox(imgs, index);
+        });
     });
 
     // ─── Smooth anchor offset ───────────
