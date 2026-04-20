@@ -169,11 +169,6 @@
 
     function openPrensaViewer(images, index) {
         if (!Array.isArray(images)) images = [images];
-        // PDFs en móvil → abrir en nueva pestaña (iOS no renderiza iframes PDF)
-        if (isMobileDevice() && images[index].toLowerCase().endsWith('.pdf')) {
-            window.open(images[index], '_blank');
-            return;
-        }
         pvImages = images;
         pvIndex  = index;
         renderPVSlide();
@@ -186,7 +181,23 @@
         prensaViewerContent.innerHTML = '';
         const href  = pvImages[pvIndex];
         const isPDF = href.toLowerCase().endsWith('.pdf');
-        if (isPDF) {
+
+        if (isPDF && isMobileDevice()) {
+            // Móvil + PDF: pantalla intermedia con botón explícito — sin descarga automática
+            const screen = document.createElement('div');
+            screen.className = 'pdf-mobile-screen';
+            const fileName = decodeURIComponent(href.split('/').pop().replace(/\.pdf$/i, ''));
+            screen.innerHTML = `
+                <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="8" y="4" width="40" height="52" rx="3"/>
+                    <polyline points="40,4 40,20 56,20"/>
+                    <line x1="18" y1="32" x2="46" y2="32"/>
+                    <line x1="18" y1="40" x2="38" y2="40"/>
+                </svg>
+                <p class="pdf-mobile-name">${fileName}</p>
+                <a href="${href}" target="_blank" class="pdf-mobile-btn">Abrir documento ↗</a>`;
+            prensaViewerContent.appendChild(screen);
+        } else if (isPDF) {
             const iframe = document.createElement('iframe');
             iframe.src = href;
             prensaViewerContent.appendChild(iframe);
@@ -196,6 +207,7 @@
             img.alt  = 'Prensa';
             prensaViewerContent.appendChild(img);
         }
+
         // Flechas y contador: solo si hay más de una imagen
         const multi = pvImages.length > 1;
         prensaViewerNav.style.display = multi ? 'flex' : 'none';
