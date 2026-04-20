@@ -162,6 +162,14 @@
     function openPrensaViewer(href) {
         prensaViewerContent.innerHTML = '';
         const isPDF = href.toLowerCase().endsWith('.pdf');
+        const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isPDF && isMobileDevice) {
+            // iOS/Android: iframes de PDF no son scrolleables → abrir en nueva pestaña
+            window.open(href, '_blank');
+            return;
+        }
+
         if (isPDF) {
             const iframe = document.createElement('iframe');
             iframe.src = href;
