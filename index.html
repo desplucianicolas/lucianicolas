@@ -967,12 +967,19 @@
 
     <!-- Prensa Viewer Overlay -->
     <div id="prensa-viewer" class="prensa-viewer" aria-hidden="true">
-        <button class="prensa-viewer-back" id="prensa-viewer-back" aria-label="Volver">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-            <span data-es="Volver" data-en="Back">Volver</span>
-        </button>
+        <div class="prensa-viewer-toolbar">
+            <button class="prensa-viewer-back" id="prensa-viewer-back" aria-label="Volver">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span data-es="Volver" data-en="Back">Volver</span>
+            </button>
+            <div class="prensa-viewer-nav" id="prensa-viewer-nav" style="display:none">
+                <button class="prensa-viewer-prev" id="prensa-viewer-prev">&#8592;</button>
+                <span class="prensa-viewer-counter" id="prensa-viewer-counter"></span>
+                <button class="prensa-viewer-next" id="prensa-viewer-next">&#8594;</button>
+            </div>
+        </div>
         <div class="prensa-viewer-content" id="prensa-viewer-content"></div>
     </div>
 

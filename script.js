@@ -155,12 +155,36 @@
     });
 
     // ─── Prensa Viewer ───────────────────
-    const prensaViewer = document.getElementById('prensa-viewer');
+    const prensaViewer     = document.getElementById('prensa-viewer');
     const prensaViewerContent = document.getElementById('prensa-viewer-content');
     const prensaViewerBack = document.getElementById('prensa-viewer-back');
+    const prensaViewerNav  = document.getElementById('prensa-viewer-nav');
+    const prensaViewerPrev = document.getElementById('prensa-viewer-prev');
+    const prensaViewerNext = document.getElementById('prensa-viewer-next');
+    const prensaViewerCounter = document.getElementById('prensa-viewer-counter');
 
-    function openPrensaViewer(href) {
+    let pvImages = [];
+    let pvIndex  = 0;
+    const isMobileDevice = () => /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    function openPrensaViewer(images, index) {
+        if (!Array.isArray(images)) images = [images];
+        // PDFs en móvil → abrir en nueva pestaña (iOS no renderiza iframes PDF)
+        if (isMobileDevice() && images[index].toLowerCase().endsWith('.pdf')) {
+            window.open(images[index], '_blank');
+            return;
+        }
+        pvImages = images;
+        pvIndex  = index;
+        renderPVSlide();
+        prensaViewer.classList.add('open');
+        prensaViewer.setAttribute('aria-hidden', 'false');
+        prensaViewer.scrollTop = 0;
+    }
+
+    function renderPVSlide() {
         prensaViewerContent.innerHTML = '';
+        const href  = pvImages[pvIndex];
         const isPDF = href.toLowerCase().endsWith('.pdf');
         if (isPDF) {
             const iframe = document.createElement('iframe');
@@ -168,12 +192,14 @@
             prensaViewerContent.appendChild(iframe);
         } else {
             const img = document.createElement('img');
-            img.src = href;
-            img.alt = 'Prensa';
+            img.src  = href;
+            img.alt  = 'Prensa';
             prensaViewerContent.appendChild(img);
         }
-        prensaViewer.classList.add('open');
-        prensaViewer.setAttribute('aria-hidden', 'false');
+        // Flechas y contador: solo si hay más de una imagen
+        const multi = pvImages.length > 1;
+        prensaViewerNav.style.display = multi ? 'flex' : 'none';
+        if (multi) prensaViewerCounter.textContent = (pvIndex + 1) + ' / ' + pvImages.length;
         prensaViewer.scrollTop = 0;
     }
 
@@ -183,19 +209,51 @@
         setTimeout(() => { prensaViewerContent.innerHTML = ''; }, 300);
     }
 
+    prensaViewerPrev.addEventListener('click', () => {
+        pvIndex = (pvIndex - 1 + pvImages.length) % pvImages.length;
+        renderPVSlide();
+    });
+    prensaViewerNext.addEventListener('click', () => {
+        pvIndex = (pvIndex + 1) % pvImages.length;
+        renderPVSlide();
+    });
+
     document.querySelectorAll('.prensa-open').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            openPrensaViewer(link.getAttribute('href'));
+            const href = link.getAttribute('href');
+
+            // Link dentro de .prensa-paginas → cargar todas las páginas del grupo
+            const paginas = link.closest('.prensa-paginas');
+            if (paginas) {
+                const all = [...paginas.querySelectorAll('.prensa-open')];
+                openPrensaViewer(all.map(l => l.getAttribute('href')), all.indexOf(link));
+                return;
+            }
+
+            // Título de un artículo con .prensa-paginas → abrir desde la 1ª página
+            if (link.classList.contains('prensa-titulo')) {
+                const li = link.closest('li');
+                const pg = li && li.querySelector('.prensa-paginas');
+                if (pg) {
+                    const all = [...pg.querySelectorAll('.prensa-open')];
+                    openPrensaViewer(all.map(l => l.getAttribute('href')), 0);
+                    return;
+                }
+            }
+
+            // Ítem único
+            openPrensaViewer([href], 0);
         });
     });
 
     prensaViewerBack.addEventListener('click', closePrensaViewer);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && prensaViewer.classList.contains('open')) {
-            closePrensaViewer();
-        }
+        if (!prensaViewer.classList.contains('open')) return;
+        if (e.key === 'Escape') closePrensaViewer();
+        if (e.key === 'ArrowLeft')  { pvIndex = (pvIndex - 1 + pvImages.length) % pvImages.length; renderPVSlide(); }
+        if (e.key === 'ArrowRight') { pvIndex = (pvIndex + 1) % pvImages.length; renderPVSlide(); }
     });
 
     // ─── Photo Lightbox (Tablao) ─────────
