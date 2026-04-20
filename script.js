@@ -250,6 +250,64 @@
         });
     });
 
+    // ─── Deep links (Instagram / YouTube) ──
+    function toAppScheme(url) {
+        // YouTube: vídeo
+        const ytVideo = url.match(/youtube\.com\/watch\?v=([\w-]+)/);
+        if (ytVideo) return 'vnd.youtube://' + ytVideo[1];
+
+        // YouTube: short
+        const ytShort = url.match(/(?:youtube\.com|youtu\.be)\/shorts\/([\w-]+)/);
+        if (ytShort) return 'vnd.youtube://' + ytShort[1];
+
+        // YouTube: canal
+        const ytChannel = url.match(/youtube\.com\/@([\w-]+)/);
+        if (ytChannel) return 'vnd.youtube://www.youtube.com/@' + ytChannel[1];
+
+        // Instagram: perfil  (instagram.com/USERNAME/ — sin /reel/ ni /p/)
+        const igProfile = url.match(/instagram\.com\/(?!reel|p\/)([A-Za-z0-9._]+)\/?(?:[?#]|$)/);
+        if (igProfile) return 'instagram://user?username=' + igProfile[1];
+
+        // Instagram reels/posts → Universal Links de iOS lo gestionan solo
+        return null;
+    }
+
+    const isMobileUA = () => /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    document.querySelectorAll('a[href*="instagram.com"], a[href*="youtube.com"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            if (!isMobileUA()) return;
+            const appUrl = toAppScheme(this.href);
+            if (!appUrl) return; // reels/posts: dejar que Universal Links actúe
+
+            e.preventDefault();
+
+            // Intentar abrir la app via iframe oculto (no navega fuera de la página)
+            const iframe = document.createElement('iframe');
+            iframe.style.cssText = 'display:none;width:0;height:0;';
+            document.body.appendChild(iframe);
+
+            let appOpened = false;
+            const onBlur = () => { appOpened = true; };
+            window.addEventListener('blur', onBlur, { once: true });
+
+            const fallback = setTimeout(() => {
+                window.removeEventListener('blur', onBlur);
+                if (document.body.contains(iframe)) document.body.removeChild(iframe);
+                if (!appOpened) window.open(this.href, '_blank');
+            }, 1300);
+
+            window.addEventListener('blur', () => {
+                clearTimeout(fallback);
+                setTimeout(() => {
+                    if (document.body.contains(iframe)) document.body.removeChild(iframe);
+                }, 200);
+            }, { once: true });
+
+            iframe.src = appUrl;
+        });
+    });
+
     // ─── Smooth anchor offset ───────────
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
