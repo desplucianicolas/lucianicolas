@@ -107,7 +107,7 @@
 
     // ─── Hero Video ────────────────────
     const heroVideo = document.querySelector('.hero-video');
-    if (heroVideo) {
+    if (heroVideo && heroVideo.tagName === 'VIDEO') {
         heroVideo.playbackRate = 0.85;
         heroVideo.play().catch(() => {});
     }
