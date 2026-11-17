@@ -117,6 +117,68 @@
     const modalContent = document.getElementById('modal-content');
     const modalClose = document.getElementById('modal-close');
 
+    // Convierte cada .piece-gallery (imágenes/vídeos apilados) en un carrusel horizontal
+    function initPieceGalleries(root) {
+        root.querySelectorAll('.piece-gallery').forEach(gallery => {
+            const media = [...gallery.children];
+            if (media.length === 0) return;
+
+            const track = document.createElement('div');
+            track.className = 'piece-gallery-track';
+            media.forEach(m => track.appendChild(m));
+            gallery.appendChild(track);
+
+            if (media.length > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.type = 'button';
+                prevBtn.className = 'piece-gallery-arrow piece-gallery-prev';
+                prevBtn.setAttribute('aria-label', 'Anterior');
+                prevBtn.textContent = '‹';
+
+                const nextBtn = document.createElement('button');
+                nextBtn.type = 'button';
+                nextBtn.className = 'piece-gallery-arrow piece-gallery-next';
+                nextBtn.setAttribute('aria-label', 'Siguiente');
+                nextBtn.textContent = '›';
+
+                const counter = document.createElement('div');
+                counter.className = 'piece-gallery-counter';
+
+                gallery.append(prevBtn, nextBtn, counter);
+
+                const slideWidth = () => track.clientWidth;
+                const updateCounter = () => {
+                    const idx = Math.round(track.scrollLeft / slideWidth());
+                    counter.textContent = (idx + 1) + ' / ' + media.length;
+                };
+                prevBtn.addEventListener('click', () => track.scrollBy({ left: -slideWidth(), behavior: 'smooth' }));
+                nextBtn.addEventListener('click', () => track.scrollBy({ left: slideWidth(), behavior: 'smooth' }));
+
+                let scrollTimer;
+                track.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimer);
+                    scrollTimer = setTimeout(updateCounter, 80);
+                });
+
+                updateCounter();
+            }
+        });
+    }
+
+    // Ajusta la altura del texto a la de la galería (columnas lado a lado) para que no
+    // sobre hueco bajo las fotos ni el texto se alargue de más: el texto hace scroll interno.
+    function syncPieceInfoHeight(root) {
+        const gallery = root.querySelector('.piece-gallery');
+        const info = root.querySelector('.piece-info');
+        if (!gallery || !info) return;
+        if (window.innerWidth <= 768) {
+            info.style.maxHeight = '';
+            return;
+        }
+        const h = gallery.getBoundingClientRect().height;
+        if (h > 0) info.style.maxHeight = h + 'px';
+    }
+
     document.querySelectorAll('.creacion-card[data-piece]').forEach(card => {
         card.addEventListener('click', () => {
             const pieceId = card.dataset.piece;
@@ -128,11 +190,17 @@
                 modalContent.querySelectorAll('[data-es]').forEach(el => {
                     el.textContent = el.getAttribute('data-' + currentLang);
                 });
+                initPieceGalleries(modalContent);
+                syncPieceInfoHeight(modalContent);
                 modal.classList.add('open');
                 modal.scrollTop = 0;
                 document.body.style.overflow = 'hidden';
             }
         });
+    });
+
+    window.addEventListener('resize', () => {
+        if (modal.classList.contains('open')) syncPieceInfoHeight(modalContent);
     });
 
     modalClose.addEventListener('click', () => {
